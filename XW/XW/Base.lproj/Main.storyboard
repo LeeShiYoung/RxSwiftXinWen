@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cop-aB-Ote">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="aSS-bF-rLI">
+            <objects>
+                <navigationController id="cop-aB-Ote" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FEN-vB-ycw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5ze-yY-JRQ" kind="relationship" relationship="rootViewController" id="3Ox-Hp-viz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6C-OW-FNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330" y="106"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="N6w-FX-uaa">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="5ze-yY-JRQ" customClass="PageViewController" customModule="XW" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Taq-xX-ceR"/>
+                        <viewControllerLayoutGuide type="bottom" id="0k7-36-bTV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fQo-ma-kKP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B2O-Ha-Oo4" customClass="PageContentView" customModule="XW" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="100.5" width="375" height="566.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-he-qzD" customClass="PageTitleView" customModule="XW" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="36.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-HM-e0V">
+                                        <rect key="frame" x="0.0" y="36" width="375" height="0.5"/>
+                                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="Ipz-R8-NzV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="XDg-HM-e0V" firstAttribute="leading" secondItem="D3Z-he-qzD" secondAttribute="leading" id="52u-vt-acS"/>
+                                    <constraint firstAttribute="height" constant="36.5" id="GQM-D6-SJ9"/>
+                                    <constraint firstAttribute="bottom" secondItem="XDg-HM-e0V" secondAttribute="bottom" id="eqx-7r-f7v"/>
+                                    <constraint firstAttribute="trailing" secondItem="XDg-HM-e0V" secondAttribute="trailing" id="wde-FL-F1c"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="D3Z-he-qzD" secondAttribute="trailing" id="2zh-LC-d7z"/>
+                            <constraint firstItem="D3Z-he-qzD" firstAttribute="leading" secondItem="fQo-ma-kKP" secondAttribute="leading" id="EP7-9G-O9g"/>
+                            <constraint firstItem="B2O-Ha-Oo4" firstAttribute="top" secondItem="D3Z-he-qzD" secondAttribute="bottom" id="cHe-23-wFr"/>
+                            <constraint firstItem="B2O-Ha-Oo4" firstAttribute="leading" secondItem="fQo-ma-kKP" secondAttribute="leading" id="dhe-8j-GRY"/>
+                            <constraint firstItem="D3Z-he-qzD" firstAttribute="top" secondItem="Taq-xX-ceR" secondAttribute="bottom" id="oKU-Lk-U4r"/>
+                            <constraint firstAttribute="trailing" secondItem="B2O-Ha-Oo4" secondAttribute="trailing" id="sQx-qT-y9A"/>
+                            <constraint firstItem="0k7-36-bTV" firstAttribute="top" secondItem="B2O-Ha-Oo4" secondAttribute="bottom" id="zIe-Ta-k7s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HND-vl-zJg"/>
+                    <connections>
+                        <outlet property="pageContentView" destination="B2O-Ha-Oo4" id="MZ8-bS-PVg"/>
+                        <outlet property="pageTitleView" destination="D3Z-he-qzD" id="oGk-Gx-FOm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Qq-qE-YTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373.60000000000002" y="102.99850074962519"/>
+        </scene>
+    </scenes>
+</document>
