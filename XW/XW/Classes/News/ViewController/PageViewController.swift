@@ -19,8 +19,6 @@ class PageViewController: BaseViewController {
     
     override func setupUI() {
 
-        let array = Array<PageModel>.mapPlist(path: R.file.titlesPlist.path())
-        pageTitleView.titles.value = array
-        
+        pageTitleView.titles.value = Array<PageModel>.mapPlist(path: R.file.titlesPlist.path())
     }
 }
