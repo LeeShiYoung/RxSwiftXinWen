@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsTableViewCell: GenericTableViewCell {
-
+    
     @IBOutlet weak var titlelabel: UILabel!
     
-     @IBOutlet weak var timelabel: UILabel!
- 
+    @IBOutlet weak var timelabel: UILabel!
+    
     @IBOutlet weak var imageview: UIImageView!
-  
+ 
+    func configureCell(datas: NewsModel) {
+        
+        titlelabel.text = datas.title
+        timelabel.text = datas.date
+        imageview.kf.setImage(with: URL(string: datas.thumbnail_pic_s ?? ""))
+
+    }
+    
 }

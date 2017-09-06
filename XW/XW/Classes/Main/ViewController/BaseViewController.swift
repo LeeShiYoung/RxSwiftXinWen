@@ -12,7 +12,7 @@ import RxCocoa
 
 class BaseViewController: UIViewController, ConfigurableViewController {
 
-    public var viewModel: BaseViewModel?
+//    public var viewModel: BaseViewModel?
     
     public let disposebag = DisposeBag()
     

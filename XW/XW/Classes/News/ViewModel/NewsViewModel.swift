@@ -7,8 +7,35 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 struct NewsViewModel {
     
+    var parameter: Variable<String>
     
+    var datas: Driver<[NewsModel]>
+    
+    init() {
+        self.parameter = Variable("")
+        
+        self.datas = parameter.asDriver().flatMapLatest{ parm in
+            
+            return API.request(.toutiao(parm, APPKey))
+                .filterSuccessfulStatusCodes()
+                .mapResult(NewsModel.self)
+                .showErrorToast()
+                .map{ datas in
+                    return datas
+                }
+                .asDriver(onErrorJustReturn: [])
+        }
+    }
+}
+
+extension NewsViewModel {
+    fileprivate func getNewsData() {
+        
+        
+    }
 }

@@ -16,6 +16,10 @@ target 'XW' do
     pod 'BCColor'
     pod 'R.swift'
     pod 'ObjectMapper'
+    pod 'SVProgressHUD'
+    pod 'Moya'
+    pod 'Moya-ObjectMapper/RxSwift'
+    pod 'Kingfisher'
     
     target 'XWTests' do
         inherit! :search_paths

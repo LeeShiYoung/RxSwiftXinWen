@@ -18,27 +18,23 @@ class NewsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
-    
     
     override func bindToView() {
         
-        let item = Observable.just(
-            (0...20).map{ "\($0)" }
-        )
-        
-        item
+        viewModel.parameter.value = newsTtile ?? ""
+       
+        viewModel.datas.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: NewsTableViewCell.toString(), cellType: NewsTableViewCell.self)) { (row, element, cell) in
-                cell.titlelabel.text = "我是标题\(element)"
+                cell.configureCell(datas: element)
             }
             .addDisposableTo(disposebag)
-       
     }
     
     override func setupUI() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 98
     }
+    
+    fileprivate lazy var viewModel = NewsViewModel()
 }

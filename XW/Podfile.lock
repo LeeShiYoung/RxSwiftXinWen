@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.5.0)
   - BCColor (0.2)
   - Differentiator (2.0.1)
+  - Kingfisher (3.12.2)
   - Moya (8.0.5):
     - Moya/Core (= 8.0.5)
   - Moya-ObjectMapper/Core (2.3.2):
@@ -36,10 +37,12 @@ PODS:
     - RxSwift (~> 3.0)
   - RxSwift (3.6.1)
   - SnapKit (3.2.0)
+  - SVProgressHUD (2.1.2)
   - XXNibBridge (2.3.1)
 
 DEPENDENCIES:
   - BCColor
+  - Kingfisher
   - Moya
   - Moya-ObjectMapper/RxSwift
   - ObjectMapper
@@ -49,12 +52,14 @@ DEPENDENCIES:
   - RxDataSources
   - RxSwift (~> 3.0)
   - SnapKit
+  - SVProgressHUD
   - XXNibBridge
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   BCColor: 2425540cb0da92795b81a1f15b5289a92279c9eb
   Differentiator: 8555f40f5df08beb9bcf225724af295b90e738cb
+  Kingfisher: 320626678acadfcf47008b3c6841cd882050737b
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   Moya-ObjectMapper: 1b05f10bb69fb6c8750d497d2974c1c63c08c3a9
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
@@ -66,8 +71,9 @@ SPEC CHECKSUMS:
   RxDataSources: 93c805010d4f5970e5204829a182bcdceab5adb5
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   XXNibBridge: addb780e6db076eb2c61716aa60b176a6799b80f
 
-PODFILE CHECKSUM: 8b14d387b0869a3b6a9264aca1dcc26c31a454dc
+PODFILE CHECKSUM: a15f1345a0458eb13463b325a7a9962ea33613f5
 
 COCOAPODS: 1.2.1
