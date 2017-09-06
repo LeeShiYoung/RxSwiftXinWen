@@ -40,8 +40,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 1 images.
   struct image {
+    /// Image `example`.
+    static let example = Rswift.ImageResource(bundle: R.hostingBundle, name: "example")
+    
+    /// `UIImage(named: "example", bundle: ..., traitCollection: ...)`
+    static func example(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.example, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
@@ -58,8 +66,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `NewsTableViewCell`.
+    static let newsTableViewCell: Rswift.ReuseIdentifier<NewsTableViewCell> = Rswift.ReuseIdentifier(identifier: "NewsTableViewCell")
     /// Reuse identifier `PageTitleCollectionViewCell`.
     static let pageTitleCollectionViewCell: Rswift.ReuseIdentifier<PageTitleCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PageTitleCollectionViewCell")
     
@@ -98,7 +108,7 @@ struct R: Rswift.Validatable {
   
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
-      // There are no resources to validate
+      try _R.validate()
     }
     
     fileprivate init() {}
@@ -109,7 +119,11 @@ struct R: Rswift.Validatable {
   fileprivate init() {}
 }
 
-struct _R {
+struct _R: Rswift.Validatable {
+  static func validate() throws {
+    try storyboard.validate()
+  }
+  
   struct nib {
     struct _PageTitleCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = PageTitleCollectionViewCell
@@ -128,7 +142,11 @@ struct _R {
     fileprivate init() {}
   }
   
-  struct storyboard {
+  struct storyboard: Rswift.Validatable {
+    static func validate() throws {
+      try main.validate()
+    }
+    
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
       typealias InitialController = UIKit.UIViewController
       
@@ -138,11 +156,21 @@ struct _R {
       fileprivate init() {}
     }
     
-    struct main: Rswift.StoryboardResourceWithInitialControllerType {
+    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
       let name = "Main"
+      let newsViewController = StoryboardViewControllerResource<NewsViewController>(identifier: "NewsViewController")
+      
+      func newsViewController(_: Void = ()) -> NewsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: newsViewController)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "example") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'example' is used in storyboard 'Main', but couldn't be loaded.") }
+        if _R.storyboard.main().newsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'newsViewController' could not be loaded from storyboard 'Main' as 'NewsViewController'.") }
+      }
       
       fileprivate init() {}
     }

@@ -14,7 +14,19 @@ private let cellID = "pageContentViewCellID"
 
 class PageContentView: GenericView {
 
- 
+    
+    public var childrenControllersAndparentViewController: (childrenControllers: [NewsViewController], parentViewController: UIViewController)? {
+        didSet {
+            for viewcontroller in (childrenControllersAndparentViewController?.childrenControllers)! {
+                childrenControllersAndparentViewController?.parentViewController.addChildViewController(viewcontroller)
+            }
+            
+            variableTitles.value = (childrenControllersAndparentViewController?.childrenControllers)!
+        }
+    }
+    
+    fileprivate var variableTitles = Variable([NewsViewController]())
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     
@@ -23,17 +35,18 @@ class PageContentView: GenericView {
             make.edges.equalTo(self)
         }
 
-        let pages = Observable.just(
-            (0...20).map{ "\($0)--" }
-        )
-        pages.bind(to: contentCollectionView.rx.items(cellIdentifier: cellID)) {
+        variableTitles.asObservable().bind(to: contentCollectionView.rx.items(cellIdentifier: cellID)) {[weak self]
             (item, element, cell) in
-            print(".....")
-//            cell.backgroundColor = (item % 2 == 0) ? UIColor.red : UIColor.green
+            
+            for subview in cell.contentView.subviews {
+                subview.removeFromSuperview()
+            }
+            
+            let childVC = self!.childrenControllersAndparentViewController?.childrenControllers[item]
+            childVC!.view.frame = cell.contentView.bounds
+            cell.contentView.addSubview(childVC!.view)
         }
-         .addDisposableTo(disposeBag)
-        
-        
+         .addDisposableTo(disposeBag)        
     }
     
     fileprivate lazy var contentCollectionView: UICollectionView = {[weak self] in
@@ -46,7 +59,6 @@ class PageContentView: GenericView {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
-        collectionView.bounces = false
         collectionView.scrollsToTop = false
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
         collectionView.backgroundColor = UIColor.white

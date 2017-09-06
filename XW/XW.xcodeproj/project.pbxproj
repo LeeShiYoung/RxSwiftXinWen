@@ -10,6 +10,9 @@
 		1FDF58DE91715EB36829FCBF /* Pods_XWTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D22659AF330A89CCC89368 /* Pods_XWTests.framework */; };
 		40A15E91DD1309F194A2318B /* Pods_XWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4C02AD8C7C0C72302B5473 /* Pods_XWUITests.framework */; };
 		439F866A0437C62BD69EE8E9 /* Pods_XW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E104DFC420EFD1E5837E7D68 /* Pods_XW.framework */; };
+		C811B4041F5FD30800AB2441 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C811B4031F5FD30800AB2441 /* NewsViewController.swift */; };
+		C811B4061F5FD36100AB2441 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C811B4051F5FD36100AB2441 /* NewsTableViewCell.swift */; };
+		C811B4081F5FE18C00AB2441 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C811B4071F5FE18C00AB2441 /* NewsViewModel.swift */; };
 		C85CFEE81F5E54C6004C1902 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85CFEE21F5E54C6004C1902 /* ConfigurableView.swift */; };
 		C85CFEE91F5E54C6004C1902 /* GenericCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85CFEE31F5E54C6004C1902 /* GenericCollectionViewCell.swift */; };
 		C85CFEEA1F5E54C6004C1902 /* GenericReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85CFEE41F5E54C6004C1902 /* GenericReusableView.swift */; };
@@ -65,6 +68,9 @@
 		6B1C9A21D6683179350833DD /* Pods-XW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XW.release.xcconfig"; path = "Pods/Target Support Files/Pods-XW/Pods-XW.release.xcconfig"; sourceTree = "<group>"; };
 		9F4C02AD8C7C0C72302B5473 /* Pods_XWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5DB1AB1461DE789B1BF6ED /* Pods-XWUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWUITests/Pods-XWUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C811B4031F5FD30800AB2441 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		C811B4051F5FD36100AB2441 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		C811B4071F5FE18C00AB2441 /* NewsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		C83451E0FB942C75BE469BC6 /* Pods-XWTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWTests/Pods-XWTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C85CFEE21F5E54C6004C1902 /* ConfigurableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		C85CFEE31F5E54C6004C1902 /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -345,6 +351,7 @@
 		C89FDE7E1F5D5FD000DE4B70 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C811B4051F5FD36100AB2441 /* NewsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				C89FDE811F5D5FF500DE4B70 /* PageViewController.swift */,
+				C811B4031F5FD30800AB2441 /* NewsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 		C89FDE801F5D5FD000DE4B70 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C811B4071F5FE18C00AB2441 /* NewsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -672,7 +681,9 @@
 				C89FDE751F5D4A0400DE4B70 /* String+Extension.swift in Sources */,
 				C89FDE821F5D5FF500DE4B70 /* PageViewController.swift in Sources */,
 				C89FDE791F5D4AA600DE4B70 /* UIView+String.swift in Sources */,
+				C811B4081F5FE18C00AB2441 /* NewsViewModel.swift in Sources */,
 				C85CFEFB1F5EA157004C1902 /* R.generated.swift in Sources */,
+				C811B4061F5FD36100AB2441 /* NewsTableViewCell.swift in Sources */,
 				C85CFEEC1F5E54C6004C1902 /* GenericView.swift in Sources */,
 				C89FDE201F5D3C6E00DE4B70 /* AppDelegate.swift in Sources */,
 				C89FDE6D1F5D446B00DE4B70 /* PageTitleView.swift in Sources */,
@@ -680,6 +691,7 @@
 				C85CFEEB1F5E54C6004C1902 /* GenericTableViewCell.swift in Sources */,
 				C85CFEE91F5E54C6004C1902 /* GenericCollectionViewCell.swift in Sources */,
 				C89FDE551F5D3CAD00DE4B70 /* BaseViewController.swift in Sources */,
+				C811B4041F5FD30800AB2441 /* NewsViewController.swift in Sources */,
 				C89FDE711F5D448E00DE4B70 /* PageTitleCollectionViewCell.swift in Sources */,
 				C89FDE6C1F5D446B00DE4B70 /* PageContentView.swift in Sources */,
 				C85CFEE81F5E54C6004C1902 /* ConfigurableView.swift in Sources */,

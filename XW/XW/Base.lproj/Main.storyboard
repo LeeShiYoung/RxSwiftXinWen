@@ -52,7 +52,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="XDg-HM-e0V" firstAttribute="leading" secondItem="D3Z-he-qzD" secondAttribute="leading" id="52u-vt-acS"/>
                                     <constraint firstAttribute="height" constant="36.5" id="GQM-D6-SJ9"/>
@@ -82,5 +82,92 @@
             </objects>
             <point key="canvasLocation" x="373.60000000000002" y="102.99850074962519"/>
         </scene>
+        <!--News View Controller-->
+        <scene sceneID="5R2-GF-kOc">
+            <objects>
+                <viewController storyboardIdentifier="NewsViewController" id="9mg-zM-AdR" customClass="NewsViewController" customModule="XW" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tnf-VS-O2g"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZwM-B3-2hS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o89-3f-zk3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ncv-uB-uQw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTableViewCell" rowHeight="98" id="Mly-kD-EFt" customClass="NewsTableViewCell" customModule="XW" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mly-kD-EFt" id="s2C-iY-OFo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="example" translatesAutoresizingMaskIntoConstraints="NO" id="B3D-Yi-hWE">
+                                                    <rect key="frame" x="269.5" y="14.5" width="90.5" height="68"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90.670000000000002" id="1Xj-tS-sMB"/>
+                                                        <constraint firstAttribute="height" constant="68" id="B6c-yo-Sgq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qee-Z5-Ass">
+                                                    <rect key="frame" x="15" y="18" width="239.5" height="31.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.027450980392156862" green="0.027450980392156862" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioc-tf-cni">
+                                                    <rect key="frame" x="15" y="67.5" width="25" height="12"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="12" id="1Ie-Ox-8ge"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ioc-tf-cni" firstAttribute="leading" secondItem="qee-Z5-Ass" secondAttribute="leading" id="AvS-YS-dAo"/>
+                                                <constraint firstItem="qee-Z5-Ass" firstAttribute="top" secondItem="s2C-iY-OFo" secondAttribute="top" constant="18" id="G2a-k9-303"/>
+                                                <constraint firstItem="qee-Z5-Ass" firstAttribute="leading" secondItem="s2C-iY-OFo" secondAttribute="leading" constant="15" id="Joq-Ou-5na"/>
+                                                <constraint firstItem="B3D-Yi-hWE" firstAttribute="centerY" secondItem="s2C-iY-OFo" secondAttribute="centerY" id="KC8-J6-mWU"/>
+                                                <constraint firstAttribute="bottom" secondItem="ioc-tf-cni" secondAttribute="bottom" constant="18" id="Mve-oT-0X1"/>
+                                                <constraint firstItem="ioc-tf-cni" firstAttribute="top" secondItem="qee-Z5-Ass" secondAttribute="bottom" constant="18" id="cc9-4g-aYa"/>
+                                                <constraint firstAttribute="trailing" secondItem="B3D-Yi-hWE" secondAttribute="trailing" constant="15" id="sfp-Lp-hko"/>
+                                                <constraint firstItem="B3D-Yi-hWE" firstAttribute="leading" secondItem="qee-Z5-Ass" secondAttribute="trailing" constant="15" id="spy-23-mkD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageview" destination="B3D-Yi-hWE" id="xkP-CQ-WX4"/>
+                                            <outlet property="timelabel" destination="ioc-tf-cni" id="lA4-uv-cU1"/>
+                                            <outlet property="titlelabel" destination="qee-Z5-Ass" id="0PX-uI-udN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ncv-uB-uQw" secondAttribute="trailing" id="BBy-PW-tlk"/>
+                            <constraint firstItem="Ncv-uB-uQw" firstAttribute="top" secondItem="o89-3f-zk3" secondAttribute="top" id="UX6-zp-lIg"/>
+                            <constraint firstItem="Ncv-uB-uQw" firstAttribute="leading" secondItem="o89-3f-zk3" secondAttribute="leading" id="bTk-T8-AiC"/>
+                            <constraint firstItem="ZwM-B3-2hS" firstAttribute="top" secondItem="Ncv-uB-uQw" secondAttribute="bottom" id="jkO-PG-Xat"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Ncv-uB-uQw" id="IhB-uI-hgS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iSf-r1-FKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373.60000000000002" y="-561.76911544227892"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="example" width="320" height="240"/>
+    </resources>
 </document>

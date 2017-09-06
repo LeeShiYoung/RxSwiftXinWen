@@ -19,6 +19,18 @@ class PageViewController: BaseViewController {
     
     override func setupUI() {
 
-        pageTitleView.titles.value = Array<PageModel>.mapPlist(path: R.file.titlesPlist.path())
+        let titles = Array<PageModel>.mapPlist(path: R.file.titlesPlist.path())
+        
+        var controllers = [NewsViewController]()
+        for title in titles {
+            let newVc = R.storyboard.main.newsViewController()!
+            newVc.newsTtile = title.value
+            controllers.append(newVc)
+        }
+        
+        pageTitleView.titles.value = titles
+        
+        pageContentView.childrenControllersAndparentViewController = (controllers, self)
+        
     }
 }
