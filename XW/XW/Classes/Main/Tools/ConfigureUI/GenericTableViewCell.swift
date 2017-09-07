@@ -23,3 +23,8 @@ public class GenericTableViewCell: UITableViewCell, ConfigurableView {
         
     }
 }
+
+protocol ConfigureCell {
+    associatedtype datas
+    func configureCell(datas: datas)
+}

@@ -9,12 +9,13 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 struct NewsViewModel {
     
     var parameter: Variable<String>
     
-    var datas: Driver<[NewsModel]>
+    var datas: Driver<[SectionModel<String, NewsModel>]>
     
     init() {
         self.parameter = Variable("")
@@ -25,17 +26,27 @@ struct NewsViewModel {
                 .filterSuccessfulStatusCodes()
                 .mapResult(NewsModel.self)
                 .showErrorToast()
-                .map{ datas in
-                    return datas
-                }
-                .asDriver(onErrorJustReturn: [])
+                .mapModels()
+                .asDriver(onErrorJustReturn: [SectionModel(model: "", items: [])])
         }
     }
 }
 
-extension NewsViewModel {
-    fileprivate func getNewsData() {
-        
-        
+
+// MARK: - 将网络请求下来的数据进一步包装 （判断有几张照片，identifier赋值）
+fileprivate extension ObservableType where E == [NewsModel] {
+    func mapModels() -> Observable<[SectionModel<String, NewsModel>]> {
+        return flatMap { models -> Observable<[SectionModel<String, NewsModel>]> in
+            models.forEach {
+                if !$0.thumbnail_pic_s03.isEmpty {
+                    $0.identifier = MorePicTableViewCell.toString()
+                } else {
+                    $0.identifier = SinglePicTableViewCell.toString()
+                }
+                
+                $0.date = $0.date + " " + $0.author_name
+            }
+            return Observable.just([SectionModel(model: "", items: models)])
+        }        
     }
 }

@@ -9,16 +9,27 @@
 import Foundation
 import ObjectMapper
 
-struct NewsModel: Mappable {
+class NewsModel: Mappable {
     
-    var title: String?
-    var date: String?
-    var thumbnail_pic_s: String? 
+    var title: String = ""
+    var date: String = ""
+    var thumbnail_pic_s: String = ""
+    var thumbnail_pic_s02: String = ""
+    var thumbnail_pic_s03: String = ""
+    var author_name: String = ""
+    var url: String = ""
     
-    init?(map: Map) { }
-    mutating func mapping(map: Map) {
+    var identifier: String?
+    
+    required init?(map: Map) { }
+    
+    func mapping(map: Map) {
         title <- map["title"]
         date <- map["date"]
         thumbnail_pic_s <- map["thumbnail_pic_s"]
+        thumbnail_pic_s02 <- map["thumbnail_pic_s02"]
+        thumbnail_pic_s03 <- map["thumbnail_pic_s03"]
+        author_name <- map["author_name"]
+        url <- map["url"]
     }
 }

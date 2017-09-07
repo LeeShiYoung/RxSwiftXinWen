@@ -14,6 +14,7 @@ import SVProgressHUD
 
 public extension ObservableType where E == Response {
     public func mapResult<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) -> Observable<[T]> {
+        
         return flatMap { response -> Observable<[T]> in
             return Observable.just(try response.mapResult(T.self, context: context))
         }

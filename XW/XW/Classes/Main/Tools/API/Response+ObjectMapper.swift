@@ -32,10 +32,7 @@ public extension Response {
         print(json)
     
         let status = try mapObject(Status.self)
-        
-//        guard let datas = status.datas, let object = Mapper<T>(context: context).map(JSON: datas), status.success else {
-//            throw AMError.ParseResultError(status)
-//        }
+
         guard let result = status.result, let data = Mapper<T>(context: context).mapArray(JSONObject: result.data!), result.stat == "1" else {
             throw AMError.ParseResultError(status)
         }

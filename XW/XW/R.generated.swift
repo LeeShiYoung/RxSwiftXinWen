@@ -66,12 +66,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
-    /// Reuse identifier `NewsTableViewCell`.
-    static let newsTableViewCell: Rswift.ReuseIdentifier<NewsTableViewCell> = Rswift.ReuseIdentifier(identifier: "NewsTableViewCell")
+    /// Reuse identifier `MorePicTableViewCell`.
+    static let morePicTableViewCell: Rswift.ReuseIdentifier<MorePicTableViewCell> = Rswift.ReuseIdentifier(identifier: "MorePicTableViewCell")
     /// Reuse identifier `PageTitleCollectionViewCell`.
     static let pageTitleCollectionViewCell: Rswift.ReuseIdentifier<PageTitleCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PageTitleCollectionViewCell")
+    /// Reuse identifier `SinglePicTableViewCell`.
+    static let singlePicTableViewCell: Rswift.ReuseIdentifier<SinglePicTableViewCell> = Rswift.ReuseIdentifier(identifier: "SinglePicTableViewCell")
     
     fileprivate init() {}
   }
@@ -168,7 +170,6 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "example") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'example' is used in storyboard 'Main', but couldn't be loaded.") }
         if _R.storyboard.main().newsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'newsViewController' could not be loaded from storyboard 'Main' as 'NewsViewController'.") }
       }
       

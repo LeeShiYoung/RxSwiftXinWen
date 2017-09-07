@@ -9,12 +9,15 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class NewsViewController: BaseViewController {
 
     var newsTtile: String?
     
     @IBOutlet weak var tableView: UITableView!
+    
+    fileprivate let datasoure = RxTableViewSectionedReloadDataSource<SectionModel<String, NewsModel>>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +26,30 @@ class NewsViewController: BaseViewController {
     override func bindToView() {
         
         viewModel.parameter.value = newsTtile ?? ""
-       
-        viewModel.datas.asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: NewsTableViewCell.toString(), cellType: NewsTableViewCell.self)) { (row, element, cell) in
-                cell.configureCell(datas: element)
+
+        viewModel.datas.asObservable().bind(to: tableView.rx.items(dataSource: datasoure))
+        .addDisposableTo(disposebag)
+    
+        datasoure.configureCell = { (_, tableview, indexPath, element) in
+            
+            let cell = tableview.dequeueReusableCell(withIdentifier: element.identifier!)
+            if let singleCell = cell as? SinglePicTableViewCell {
+                singleCell.configureCell(datas: element)
+                return singleCell
             }
-            .addDisposableTo(disposebag)
+            
+            if let moreCell = cell as? MorePicTableViewCell {
+                moreCell.configureCell(datas: element)
+            }
+            return cell!
+        }
+        
+        tableView.rx.modelSelected(NewsModel.self)
+        .subscribe(onNext: { element in
+            
+            
+        })
+        .addDisposableTo(disposebag)
     }
     
     override func setupUI() {
