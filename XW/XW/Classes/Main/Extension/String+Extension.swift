@@ -7,3 +7,17 @@
 //
 
 import Foundation
+//
+extension String {
+    public func htmlParmater() -> String {
+        //    var classStr = NSStringFromClass(self)
+        //    let startIdx = classStr.characters.index(of: ".")
+        //    guard let sIdx = startIdx else { return "" }
+        //    let startIdxOffset = classStr.characters.index(sIdx, offsetBy: 1)
+        //    return classStr[startIdxOffset ..< classStr.endIndex]
+        
+        
+        return ""
+    }
+}
+

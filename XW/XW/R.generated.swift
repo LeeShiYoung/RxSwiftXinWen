@@ -78,8 +78,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 0 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
+    /// This struct is generated for `NewsViewController`, and contains static references to 1 segues.
+    struct newsViewController {
+      /// Segue identifier `singleToContent`.
+      static let singleToContent: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, NewsViewController, ContentViewController> = Rswift.StoryboardSegueIdentifier(identifier: "singleToContent")
+      
+      /// Optionally returns a typed version of segue `singleToContent`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func singleToContent(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, NewsViewController, ContentViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.newsViewController.singleToContent, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   

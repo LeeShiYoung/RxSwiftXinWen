@@ -15,6 +15,8 @@ class NewsViewController: BaseViewController {
 
     var newsTtile: String?
     
+    fileprivate var url: String?
+    
     @IBOutlet weak var tableView: UITableView!
     
     fileprivate let datasoure = RxTableViewSectionedReloadDataSource<SectionModel<String, NewsModel>>()
@@ -37,7 +39,6 @@ class NewsViewController: BaseViewController {
                 singleCell.configureCell(datas: element)
                 return singleCell
             }
-            
             if let moreCell = cell as? MorePicTableViewCell {
                 moreCell.configureCell(datas: element)
             }
@@ -45,11 +46,18 @@ class NewsViewController: BaseViewController {
         }
         
         tableView.rx.modelSelected(NewsModel.self)
-        .subscribe(onNext: { element in
-            
-            
-        })
-        .addDisposableTo(disposebag)
+            .subscribe(onNext: { [weak self] element in
+                self?.performSegue(withIdentifier: R.segue.newsViewController.singleToContent.identifier, sender: element.url)
+            })
+            .addDisposableTo(disposebag)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let sourceVc = segue.destination as? ContentViewController
+        if let contentVc = sourceVc {
+            contentVc.url = sender as? String
+        }
+        
     }
     
     override func setupUI() {

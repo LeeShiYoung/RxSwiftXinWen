@@ -12,26 +12,34 @@ import Moya
 let API = RxMoyaProvider<APITool>()
 
 enum APITool {
-   case toutiao(String, String)
+    case toutiao(String, String)
+    case content(String)
 }
 extension APITool: TargetType {
     var baseURL: URL{
         switch self {
-        case .toutiao:
-            return URL(string: "http://v.juhe.cn/")!
+        case .toutiao(_, _):
+             return URL(string: "http://v.juhe.cn/")!
+        case .content(_):
+            return URL(string: "http://mini.eastday.com/mobile/")!
         }
+       
     }
     
     var path: String {
         switch self {
         case .toutiao:
             return "toutiao/index"
+        case .content(let parm):
+            return parm
         }
     }
     
     var method: Moya.Method {
         switch self {
         case .toutiao:
+            return .get
+        case .content(_):
             return .get
         }
     }
@@ -40,6 +48,8 @@ extension APITool: TargetType {
         switch self {
         case .toutiao(let type, let key):
             return ["type": type, "key": key]
+        case .content(_):
+            return nil
         }
     }
     
@@ -52,10 +62,6 @@ extension APITool: TargetType {
     }
     
     var sampleData: Data {
-        switch self {
-        case .toutiao:
-            return "Sample data".data(using: String.Encoding.utf8)!
-            
-        }
+        return "Sample data".data(using: String.Encoding.utf8)!
     }
 }
