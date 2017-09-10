@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.5.0)
   - BCColor (0.2)
   - Differentiator (2.0.1)
+  - Kanna (2.2.1)
   - Kingfisher (3.12.2)
   - Moya (8.0.5):
     - Moya/Core (= 8.0.5)
@@ -42,6 +43,7 @@ PODS:
 
 DEPENDENCIES:
   - BCColor
+  - Kanna
   - Kingfisher
   - Moya
   - Moya-ObjectMapper/RxSwift
@@ -59,6 +61,7 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   BCColor: 2425540cb0da92795b81a1f15b5289a92279c9eb
   Differentiator: 8555f40f5df08beb9bcf225724af295b90e738cb
+  Kanna: 182789ab065e8f9a6ccc2a74ce6283d3401c0c4a
   Kingfisher: 320626678acadfcf47008b3c6841cd882050737b
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   Moya-ObjectMapper: 1b05f10bb69fb6c8750d497d2974c1c63c08c3a9
@@ -74,6 +77,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   XXNibBridge: addb780e6db076eb2c61716aa60b176a6799b80f
 
-PODFILE CHECKSUM: a15f1345a0458eb13463b325a7a9962ea33613f5
+PODFILE CHECKSUM: 3efee64cb2b981d105a9a83ff3d44e7376202d32
 
 COCOAPODS: 1.2.0

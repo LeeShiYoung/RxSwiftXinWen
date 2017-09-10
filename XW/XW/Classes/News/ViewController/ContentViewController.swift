@@ -7,36 +7,34 @@
 //
 
 import UIKit
-import WebKit
 import RxSwift
 import RxCocoa
 
 class ContentViewController: BaseViewController {
-    @IBOutlet weak var webView: UIWebView!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var url: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let request = URLRequest(url: URL(string: url ?? "")!)
-        webView.loadRequest(request)
-        
-        
+    }
+    
+    override func bindToView() {
+        viewModel.parameter.value = URL(string: url ?? "")?.lastPathComponent ?? ""
+        viewModel.datas.drive(onNext: { contentModel in
+            
+            print(contentModel)
+        })
+        .addDisposableTo(disposebag)
         
         
     }
     
-}
-
-extension ContentViewController: UIWebViewDelegate {
+    fileprivate lazy var viewModel = ContentViewModel()
     
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        let titleStr = webView.stringByEvaluatingJavaScript(from: "document.title")
-        
-        let htmlStr = webView.stringByEvaluatingJavaScript(from: "document.documentElement.innerHTML")
-        print(htmlStr)
-        
-        
+    deinit {
+        print("-----")
     }
+    
 }
