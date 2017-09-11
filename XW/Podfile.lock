@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.5.0)
   - BCColor (0.2)
   - Differentiator (2.0.1)
+  - ImageScout (1.0.0)
   - Kanna (2.2.1)
   - Kingfisher (3.12.2)
   - Moya (8.0.5):
@@ -43,6 +44,7 @@ PODS:
 
 DEPENDENCIES:
   - BCColor
+  - ImageScout
   - Kanna
   - Kingfisher
   - Moya
@@ -61,6 +63,7 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   BCColor: 2425540cb0da92795b81a1f15b5289a92279c9eb
   Differentiator: 8555f40f5df08beb9bcf225724af295b90e738cb
+  ImageScout: c765b354226d4d025512f9ff3822918fbaf1e9a7
   Kanna: 182789ab065e8f9a6ccc2a74ce6283d3401c0c4a
   Kingfisher: 320626678acadfcf47008b3c6841cd882050737b
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
@@ -77,6 +80,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   XXNibBridge: addb780e6db076eb2c61716aa60b176a6799b80f
 
-PODFILE CHECKSUM: 3efee64cb2b981d105a9a83ff3d44e7376202d32
+PODFILE CHECKSUM: 4e70aa98bfff74c097dea04246a4d28d96f19a8e
 
 COCOAPODS: 1.2.0

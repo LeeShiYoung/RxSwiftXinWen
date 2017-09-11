@@ -21,7 +21,8 @@ target 'XW' do
     pod 'Moya-ObjectMapper/RxSwift'
     pod 'Kingfisher'
     pod 'Kanna'
-    
+    pod 'ImageScout'
+
     target 'XWTests' do
         inherit! :search_paths
         # Pods for testing

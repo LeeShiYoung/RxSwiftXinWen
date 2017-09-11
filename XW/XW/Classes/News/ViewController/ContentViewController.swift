@@ -9,26 +9,37 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class ContentViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var url: String?
+    var url: String!
+    
+    fileprivate let datasoure = RxTableViewSectionedReloadDataSource<SectionModel<String, ContentModel>>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func bindToView() {
-        viewModel.parameter.value = URL(string: url ?? "")?.lastPathComponent ?? ""
-        viewModel.datas.drive(onNext: { contentModel in
+        
+        viewModel.parameter.value = URL(string: url)?.lastPathComponent ?? ""
+        viewModel.datas.asObservable().bind(to: tableView.rx.items(dataSource: datasoure))
+            .addDisposableTo(disposebag)
+        datasoure.configureCell = { (_, tableview, indexPath, element) in
+            let cell = tableview.dequeueReusableCell(withIdentifier: element.identifier)
+
+            if let textCell = cell as? ContentTextTableViewCell {
+                textCell.configureCell(datas: element)
+            }
             
-            print(contentModel)
-        })
-        .addDisposableTo(disposebag)
-        
-        
+            if let imgCell = cell as? ContentImgTableViewCell {
+                imgCell.configureCell(datas: element)
+            }
+            return cell!
+        }
     }
     
     fileprivate lazy var viewModel = ContentViewModel()

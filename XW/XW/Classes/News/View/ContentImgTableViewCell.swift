@@ -8,18 +8,14 @@
 
 import UIKit
 
-class ContentImgTableViewCell: UITableViewCell {
+class ContentImgTableViewCell: UITableViewCell, ConfigureCell {
     @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var height: NSLayoutConstraint!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(datas: ContentModel) {
+        height.constant = datas.size.height
+        imageview.kf.setImage(with: URL(string: datas.img))
+        contentView.layoutIfNeeded()
     }
 
 }

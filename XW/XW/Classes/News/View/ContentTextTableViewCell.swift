@@ -8,18 +8,10 @@
 
 import UIKit
 
-class ContentTextTableViewCell: UITableViewCell {
+class ContentTextTableViewCell: UITableViewCell, ConfigureCell {
     @IBOutlet weak var textlabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configureCell(datas: ContentModel) {
+        textlabel.text = datas.text
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

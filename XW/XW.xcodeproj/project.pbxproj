@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F623CA91F66A9E3006312F5 /* UIImage+DownLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F623CA81F66A9E3006312F5 /* UIImage+DownLoad.swift */; };
 		1FBFF7221F65255700E51D7E /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF7211F65255700E51D7E /* ContentViewController.swift */; };
 		1FBFF7261F657B8000E51D7E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF7251F657B8000E51D7E /* ContentViewModel.swift */; };
 		1FBFF7281F657C1900E51D7E /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF7271F657C1900E51D7E /* ContentModel.swift */; };
 		1FBFF72A1F65814800E51D7E /* ContentTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF7291F65814800E51D7E /* ContentTextTableViewCell.swift */; };
 		1FBFF72C1F65815300E51D7E /* ContentImgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF72B1F65815300E51D7E /* ContentImgTableViewCell.swift */; };
+		1FC799F31F66CDBE00C6A72C /* CGFloat+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC799F21F66CDBE00C6A72C /* CGFloat+Scale.swift */; };
 		1FDF58DE91715EB36829FCBF /* Pods_XWTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D22659AF330A89CCC89368 /* Pods_XWTests.framework */; };
 		40A15E91DD1309F194A2318B /* Pods_XWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4C02AD8C7C0C72302B5473 /* Pods_XWUITests.framework */; };
 		439F866A0437C62BD69EE8E9 /* Pods_XW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E104DFC420EFD1E5837E7D68 /* Pods_XW.framework */; };
@@ -75,11 +77,13 @@
 		041D356E5565F3D72232325A /* Pods-XWTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWTests/Pods-XWTests.release.xcconfig"; sourceTree = "<group>"; };
 		04D3E7167EEA7B39D048489C /* Pods-XWUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWUITests/Pods-XWUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1A31BE73EEFAF70DECEC19CC /* Pods-XW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XW/Pods-XW.debug.xcconfig"; sourceTree = "<group>"; };
+		1F623CA81F66A9E3006312F5 /* UIImage+DownLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+DownLoad.swift"; sourceTree = "<group>"; };
 		1FBFF7211F65255700E51D7E /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		1FBFF7251F657B8000E51D7E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		1FBFF7271F657C1900E51D7E /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		1FBFF7291F65814800E51D7E /* ContentTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTextTableViewCell.swift; sourceTree = "<group>"; };
 		1FBFF72B1F65815300E51D7E /* ContentImgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentImgTableViewCell.swift; sourceTree = "<group>"; };
+		1FC799F21F66CDBE00C6A72C /* CGFloat+Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Scale.swift"; sourceTree = "<group>"; };
 		34D22659AF330A89CCC89368 /* Pods_XWTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1C9A21D6683179350833DD /* Pods-XW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XW.release.xcconfig"; path = "Pods/Target Support Files/Pods-XW/Pods-XW.release.xcconfig"; sourceTree = "<group>"; };
 		9F4C02AD8C7C0C72302B5473 /* Pods_XWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -348,6 +352,8 @@
 				C89FDE781F5D4AA600DE4B70 /* UIView+String.swift */,
 				C89FDE761F5D4A2A00DE4B70 /* UIViewController+String.swift */,
 				C85CFEFC1F5EA485004C1902 /* Array+Plist.swift */,
+				1F623CA81F66A9E3006312F5 /* UIImage+DownLoad.swift */,
+				1FC799F21F66CDBE00C6A72C /* CGFloat+Scale.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -722,6 +728,7 @@
 				C89FDE751F5D4A0400DE4B70 /* String+Extension.swift in Sources */,
 				C89FDE821F5D5FF500DE4B70 /* PageViewController.swift in Sources */,
 				C8DC39DD1F5FE9CC006535E2 /* API.swift in Sources */,
+				1FC799F31F66CDBE00C6A72C /* CGFloat+Scale.swift in Sources */,
 				C89FDE791F5D4AA600DE4B70 /* UIView+String.swift in Sources */,
 				C811B4081F5FE18C00AB2441 /* NewsViewModel.swift in Sources */,
 				C85CFEFB1F5EA157004C1902 /* R.generated.swift in Sources */,
@@ -744,6 +751,7 @@
 				1FBFF72C1F65815300E51D7E /* ContentImgTableViewCell.swift in Sources */,
 				C8DC39DF1F5FF4F5006535E2 /* NewsModel.swift in Sources */,
 				C89FDE6C1F5D446B00DE4B70 /* PageContentView.swift in Sources */,
+				1F623CA91F66A9E3006312F5 /* UIImage+DownLoad.swift in Sources */,
 				C8DC39D91F5FE5AB006535E2 /* Observable+ObjectMapper.swift in Sources */,
 				C85CFEE81F5E54C6004C1902 /* ConfigurableView.swift in Sources */,
 				1FBFF7281F657C1900E51D7E /* ContentModel.swift in Sources */,

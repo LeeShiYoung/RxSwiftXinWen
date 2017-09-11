@@ -7,15 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 struct ContentModel {
     var text: String
     var img: String
+    var size: CGSize
     var identifier: String
     
     init() {
         self.text = ""
         self.img = ""
         self.identifier = ""
+        self.size = CGSize.zero
     }
 }
