@@ -42,6 +42,11 @@ class ContentViewController: BaseViewController {
         }
     }
     
+    override func setupUI() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 98
+    }
+    
     fileprivate lazy var viewModel = ContentViewModel()
     
     deinit {
