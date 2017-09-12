@@ -12,6 +12,7 @@ class ContentTextTableViewCell: UITableViewCell, ConfigureCell {
     @IBOutlet weak var textlabel: UILabel!
     
     func configureCell(datas: ContentModel) {
-        textlabel.text = datas.text
+        textlabel.attributedText = datas.text
+//        textlabel.attributedText
     }
 }

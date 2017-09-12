@@ -43,7 +43,7 @@ fileprivate extension ObservableType where E == String {
                     
                     var contentModel = ContentModel()
                     if let text = element.text, !text.isEmpty {
-                        contentModel.text = text
+                        contentModel.text = text.addLineSpace(15)
                         contentModel.identifier = ContentTextTableViewCell.toString()
                         datas.append(contentModel)
                     }

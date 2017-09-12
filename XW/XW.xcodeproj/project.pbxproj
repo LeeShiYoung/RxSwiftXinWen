@@ -14,6 +14,7 @@
 		1FBFF72A1F65814800E51D7E /* ContentTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF7291F65814800E51D7E /* ContentTextTableViewCell.swift */; };
 		1FBFF72C1F65815300E51D7E /* ContentImgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF72B1F65815300E51D7E /* ContentImgTableViewCell.swift */; };
 		1FC799F31F66CDBE00C6A72C /* CGFloat+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC799F21F66CDBE00C6A72C /* CGFloat+Scale.swift */; };
+		1FDB87771F67726700CC1588 /* String+Attribut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDB87761F67726700CC1588 /* String+Attribut.swift */; };
 		1FDF58DE91715EB36829FCBF /* Pods_XWTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D22659AF330A89CCC89368 /* Pods_XWTests.framework */; };
 		40A15E91DD1309F194A2318B /* Pods_XWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4C02AD8C7C0C72302B5473 /* Pods_XWUITests.framework */; };
 		439F866A0437C62BD69EE8E9 /* Pods_XW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E104DFC420EFD1E5837E7D68 /* Pods_XW.framework */; };
@@ -84,6 +85,7 @@
 		1FBFF7291F65814800E51D7E /* ContentTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTextTableViewCell.swift; sourceTree = "<group>"; };
 		1FBFF72B1F65815300E51D7E /* ContentImgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentImgTableViewCell.swift; sourceTree = "<group>"; };
 		1FC799F21F66CDBE00C6A72C /* CGFloat+Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Scale.swift"; sourceTree = "<group>"; };
+		1FDB87761F67726700CC1588 /* String+Attribut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attribut.swift"; sourceTree = "<group>"; };
 		34D22659AF330A89CCC89368 /* Pods_XWTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1C9A21D6683179350833DD /* Pods-XW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XW.release.xcconfig"; path = "Pods/Target Support Files/Pods-XW/Pods-XW.release.xcconfig"; sourceTree = "<group>"; };
 		9F4C02AD8C7C0C72302B5473 /* Pods_XWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -354,6 +356,7 @@
 				C85CFEFC1F5EA485004C1902 /* Array+Plist.swift */,
 				1F623CA81F66A9E3006312F5 /* UIImage+DownLoad.swift */,
 				1FC799F21F66CDBE00C6A72C /* CGFloat+Scale.swift */,
+				1FDB87761F67726700CC1588 /* String+Attribut.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				C89FDE791F5D4AA600DE4B70 /* UIView+String.swift in Sources */,
 				C811B4081F5FE18C00AB2441 /* NewsViewModel.swift in Sources */,
 				C85CFEFB1F5EA157004C1902 /* R.generated.swift in Sources */,
+				1FDB87771F67726700CC1588 /* String+Attribut.swift in Sources */,
 				C85CFEEC1F5E54C6004C1902 /* GenericView.swift in Sources */,
 				C89FDE201F5D3C6E00DE4B70 /* AppDelegate.swift in Sources */,
 				C8DC39DA1F5FE5AB006535E2 /* Response+ObjectMapper.swift in Sources */,
@@ -853,7 +857,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -897,7 +901,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
