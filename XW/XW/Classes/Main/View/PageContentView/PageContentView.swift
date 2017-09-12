@@ -29,11 +29,11 @@ class PageContentView: GenericView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.frame.size.width = kScreenW
+        self.frame.size.height = kScreenH - 64 - CGFloat(itemHeight)
     
         addSubview(contentCollectionView)
-        contentCollectionView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
-        }
 
         variableTitles.asObservable().bind(to: contentCollectionView.rx.items(cellIdentifier: cellID)) {[weak self]
             (item, element, cell) in
@@ -56,7 +56,7 @@ class PageContentView: GenericView {
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
         
-        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: (self?.bounds)!, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
         collectionView.scrollsToTop = false

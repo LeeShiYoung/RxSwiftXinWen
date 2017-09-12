@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import ObjectMapper
 
-private let itemHeight = 36
+public let itemHeight = 36
 
 class PageTitleView: GenericView {
     
