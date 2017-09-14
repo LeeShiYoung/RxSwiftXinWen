@@ -29,11 +29,11 @@ class PageContentView: GenericView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.frame.size.width = kScreenW
-        self.frame.size.height = kScreenH - 64 - CGFloat(itemHeight)
-    
+
         addSubview(contentCollectionView)
+        contentCollectionView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self)
+        }
 
         variableTitles.asObservable().bind(to: contentCollectionView.rx.items(cellIdentifier: cellID)) {[weak self]
             (item, element, cell) in
@@ -49,14 +49,13 @@ class PageContentView: GenericView {
          .addDisposableTo(disposeBag)        
     }
     
+    override func layoutSubviews() {
+        layout.itemSize = self.bounds.size
+    }
+    
     fileprivate lazy var contentCollectionView: UICollectionView = {[weak self] in
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = (self?.bounds.size)!
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        layout.scrollDirection = .horizontal
         
-        let collectionView = UICollectionView(frame: (self?.bounds)!, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: (self?.layout)!)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
         collectionView.scrollsToTop = false
@@ -64,6 +63,15 @@ class PageContentView: GenericView {
         collectionView.backgroundColor = UIColor.white
         return collectionView
         }()
+    
+    fileprivate lazy var layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.scrollDirection = .horizontal
+        return layout
+    }()
     
 }
 

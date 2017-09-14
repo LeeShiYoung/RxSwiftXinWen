@@ -57,7 +57,6 @@ class NewsViewController: BaseViewController {
         if let contentVc = sourceVc {
             contentVc.url = sender as? String
         }
-        
     }
     
     override func setupUI() {
