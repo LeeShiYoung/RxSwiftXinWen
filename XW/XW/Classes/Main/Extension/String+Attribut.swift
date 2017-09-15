@@ -17,3 +17,7 @@ extension String {
         return NSAttributedString(string: self, attributes: attributeds)
     }
 }
+
+
+
+

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import XXNibBridge
 import RxSwift
 import RxCocoa
 import SnapKit

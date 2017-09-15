@@ -21,6 +21,7 @@ target 'XW' do
     pod 'Moya-ObjectMapper/RxSwift'
     pod 'Kingfisher'
     pod 'Kanna'
+    pod 'AttributedLib'
 #    pod 'ImageScout'
 #    pod 'SwiftRichString', '~> 0.9.9'
 

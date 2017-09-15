@@ -15,9 +15,11 @@ class ContentViewController: BaseViewController {
     
     var titleAndSource: (title: String, source: String)?
     
+    var url: String!
+
     @IBOutlet weak var tableView: UITableView!
     
-    var url: String!
+    fileprivate var pointY: CGFloat = 0.0
     
     fileprivate let datasoure = RxTableViewSectionedReloadDataSource<SectionModel<String, ContentModel>>()
     
@@ -47,6 +49,8 @@ class ContentViewController: BaseViewController {
             }
             return cell!
         }
+        
+        
     }
     
     override func setupUI() {

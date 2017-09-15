@@ -1,8 +1,8 @@
 PODS:
   - Alamofire (4.5.0)
+  - AttributedLib (1.3.0)
   - BCColor (0.2)
   - Differentiator (2.0.1)
-  - ImageScout (1.0.0)
   - Kanna (2.2.1)
   - Kingfisher (3.12.2)
   - Moya (8.0.5):
@@ -40,11 +40,10 @@ PODS:
   - RxSwift (3.6.1)
   - SnapKit (3.2.0)
   - SVProgressHUD (2.1.2)
-  - XXNibBridge (2.3.1)
 
 DEPENDENCIES:
+  - AttributedLib
   - BCColor
-  - ImageScout
   - Kanna
   - Kingfisher
   - Moya
@@ -57,13 +56,12 @@ DEPENDENCIES:
   - RxSwift (~> 3.0)
   - SnapKit
   - SVProgressHUD
-  - XXNibBridge
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AttributedLib: 75e8b68200d9e7db0a4f463476c78582aa598fc8
   BCColor: 2425540cb0da92795b81a1f15b5289a92279c9eb
   Differentiator: 8555f40f5df08beb9bcf225724af295b90e738cb
-  ImageScout: c765b354226d4d025512f9ff3822918fbaf1e9a7
   Kanna: 182789ab065e8f9a6ccc2a74ce6283d3401c0c4a
   Kingfisher: 320626678acadfcf47008b3c6841cd882050737b
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
@@ -78,8 +76,7 @@ SPEC CHECKSUMS:
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
-  XXNibBridge: addb780e6db076eb2c61716aa60b176a6799b80f
 
-PODFILE CHECKSUM: 9eeb6b88214dc8033d4d71c5f747a76c92862259
+PODFILE CHECKSUM: a96f75c41ebff859f0fcf5b5f11199d79a524d68
 
 COCOAPODS: 1.2.0

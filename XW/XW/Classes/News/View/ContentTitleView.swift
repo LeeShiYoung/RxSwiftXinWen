@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import AttributedLib
 
 class ContentTitleView: UIView {
     
@@ -16,9 +17,15 @@ class ContentTitleView: UIView {
     
     var titleAndSource: (title: String, source: String)? {
         didSet{
-            titleLabel.text = titleAndSource?.title
             sourceLabel.text = titleAndSource?.source
             layoutIfNeeded()
+            
+            titleLabel.attributedText = titleAndSource?.title.at.attributed {
+                return $0.alignment(.center)
+                    .lineSpacing(10)
+                    .foreground(color: UIColor.colorWithHex("#333333")!)
+                    .font(UIFont.boldSystemFont(ofSize: 20))
+            }
         }
     }
     

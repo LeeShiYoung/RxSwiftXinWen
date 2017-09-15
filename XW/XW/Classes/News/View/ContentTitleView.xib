@@ -17,14 +17,14 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="长标题长标题长标题长标题 长标题长标题长" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9E-OD-8m6">
-                    <rect key="frame" x="15" y="0.0" width="345" height="48"/>
+                    <rect key="frame" x="15" y="0.0" width="345" height="40"/>
                     <viewLayoutGuide key="safeArea" id="T1U-zA-Oo4"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="20"/>
                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="某某新闻 2017-09-15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41M-ya-IWW">
-                    <rect key="frame" x="119" y="63" width="137.5" height="17"/>
+                    <rect key="frame" x="119" y="55" width="137.5" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -41,8 +41,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="ZQc-rJ-hse"/>
             <connections>
-                <outlet property="sourceLabel" destination="41M-ya-IWW" id="EtY-B3-DrP"/>
-                <outlet property="titleLabel" destination="c9E-OD-8m6" id="ndb-K6-q68"/>
+                <outlet property="sourceLabel" destination="41M-ya-IWW" id="d3c-9z-kqv"/>
+                <outlet property="titleLabel" destination="c9E-OD-8m6" id="naA-Ul-jZR"/>
             </connections>
             <point key="canvasLocation" x="-127" y="24"/>
         </view>
