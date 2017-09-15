@@ -34,7 +34,6 @@ struct ContentViewModel {
 fileprivate extension ObservableType where E == String {
     fileprivate func mapContentModels() -> Observable<[SectionModel<String, ContentModel>]> {
         return flatMap { html -> Observable<[SectionModel<String, ContentModel>]> in
-            print(html)
             var datas = [ContentModel]()
             
             if let doc = HTML(html: html, encoding: .utf8) {
@@ -48,15 +47,12 @@ fileprivate extension ObservableType where E == String {
                         datas.append(contentModel)
                     }
                     if let href = element["src"], let height = element["data-height"], let width = element["data-width"] {
-                        print("\(width) \(height)")
                         contentModel.img = href
                         contentModel.identifier = ContentImgTableViewCell.toString()
                         contentModel.size = CGSize(width: Double(width) ?? 0.0, height: Double(height) ?? 0.0).scaleSize()
                         datas.append(contentModel)
                     }
-                    
                 }
-
             }
             return Observable.just([SectionModel(model: "", items: datas)])
         }

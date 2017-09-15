@@ -11,7 +11,7 @@ target 'XW' do
     pod 'Moya'
     pod 'Moya-ObjectMapper/RxSwift'
     pod 'RxAlamofire/RxCocoa'
-    pod 'XXNibBridge'
+#    pod 'XXNibBridge'
     pod 'SnapKit'
     pod 'BCColor'
     pod 'R.swift'
@@ -21,7 +21,8 @@ target 'XW' do
     pod 'Moya-ObjectMapper/RxSwift'
     pod 'Kingfisher'
     pod 'Kanna'
-    pod 'ImageScout'
+#    pod 'ImageScout'
+#    pod 'SwiftRichString', '~> 0.9.9'
 
     target 'XWTests' do
         inherit! :search_paths

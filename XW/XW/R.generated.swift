@@ -53,10 +53,17 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `ContentTitleView`.
+    static let contentTitleView = _R.nib._ContentTitleView()
     /// Nib `PageTitleCollectionViewCell`.
     static let pageTitleCollectionViewCell = _R.nib._PageTitleCollectionViewCell()
+    
+    /// `UINib(name: "ContentTitleView", in: bundle)`
+    static func contentTitleView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.contentTitleView)
+    }
     
     /// `UINib(name: "PageTitleCollectionViewCell", in: bundle)`
     static func pageTitleCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -146,6 +153,17 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
+    struct _ContentTitleView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ContentTitleView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ContentTitleView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ContentTitleView
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _PageTitleCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = PageTitleCollectionViewCell
       
@@ -178,7 +196,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+      typealias InitialController = BaseNavigationController
       
       let bundle = R.hostingBundle
       let name = "Main"

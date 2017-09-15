@@ -16,6 +16,10 @@
 		1FC799F31F66CDBE00C6A72C /* CGFloat+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC799F21F66CDBE00C6A72C /* CGFloat+Scale.swift */; };
 		1FDB87771F67726700CC1588 /* String+Attribut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDB87761F67726700CC1588 /* String+Attribut.swift */; };
 		1FDF58DE91715EB36829FCBF /* Pods_XWTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D22659AF330A89CCC89368 /* Pods_XWTests.framework */; };
+		1FEE00DE1F6BBAA200A122C3 /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE00DD1F6BBAA200A122C3 /* Reactive+Extension.swift */; };
+		1FEE00E01F6BBE9300A122C3 /* ContentTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE00DF1F6BBE9300A122C3 /* ContentTitleView.swift */; };
+		1FEE00E21F6BBE9E00A122C3 /* ContentTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FEE00E11F6BBE9E00A122C3 /* ContentTitleView.xib */; };
+		1FEE00E41F6BC67E00A122C3 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE00E31F6BC67E00A122C3 /* BaseNavigationController.swift */; };
 		40A15E91DD1309F194A2318B /* Pods_XWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4C02AD8C7C0C72302B5473 /* Pods_XWUITests.framework */; };
 		439F866A0437C62BD69EE8E9 /* Pods_XW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E104DFC420EFD1E5837E7D68 /* Pods_XW.framework */; };
 		C811B4041F5FD30800AB2441 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C811B4031F5FD30800AB2441 /* NewsViewController.swift */; };
@@ -86,6 +90,10 @@
 		1FBFF72B1F65815300E51D7E /* ContentImgTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentImgTableViewCell.swift; sourceTree = "<group>"; };
 		1FC799F21F66CDBE00C6A72C /* CGFloat+Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Scale.swift"; sourceTree = "<group>"; };
 		1FDB87761F67726700CC1588 /* String+Attribut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attribut.swift"; sourceTree = "<group>"; };
+		1FEE00DD1F6BBAA200A122C3 /* Reactive+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
+		1FEE00DF1F6BBE9300A122C3 /* ContentTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTitleView.swift; sourceTree = "<group>"; };
+		1FEE00E11F6BBE9E00A122C3 /* ContentTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTitleView.xib; sourceTree = "<group>"; };
+		1FEE00E31F6BC67E00A122C3 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		34D22659AF330A89CCC89368 /* Pods_XWTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1C9A21D6683179350833DD /* Pods-XW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XW.release.xcconfig"; path = "Pods/Target Support Files/Pods-XW/Pods-XW.release.xcconfig"; sourceTree = "<group>"; };
 		9F4C02AD8C7C0C72302B5473 /* Pods_XWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -317,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				C89FDE521F5D3CAD00DE4B70 /* BaseViewController.swift */,
+				1FEE00E31F6BC67E00A122C3 /* BaseNavigationController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -357,6 +366,7 @@
 				1F623CA81F66A9E3006312F5 /* UIImage+DownLoad.swift */,
 				1FC799F21F66CDBE00C6A72C /* CGFloat+Scale.swift */,
 				1FDB87761F67726700CC1588 /* String+Attribut.swift */,
+				1FEE00DD1F6BBAA200A122C3 /* Reactive+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -389,6 +399,8 @@
 				C8825DB01F60DD16000CE44F /* MorePicTableViewCell.swift */,
 				1FBFF7291F65814800E51D7E /* ContentTextTableViewCell.swift */,
 				1FBFF72B1F65815300E51D7E /* ContentImgTableViewCell.swift */,
+				1FEE00DF1F6BBE9300A122C3 /* ContentTitleView.swift */,
+				1FEE00E11F6BBE9E00A122C3 /* ContentTitleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -544,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C85CFEF81F5E9BB3004C1902 /* Titles.plist in Resources */,
+				1FEE00E21F6BBE9E00A122C3 /* ContentTitleView.xib in Resources */,
 				C89FDE2A1F5D3C6E00DE4B70 /* LaunchScreen.storyboard in Resources */,
 				C89FDE271F5D3C6E00DE4B70 /* Assets.xcassets in Resources */,
 				C89FDE251F5D3C6E00DE4B70 /* Main.storyboard in Resources */,
@@ -746,16 +759,19 @@
 				C85CFEEB1F5E54C6004C1902 /* GenericTableViewCell.swift in Sources */,
 				1FBFF7221F65255700E51D7E /* ContentViewController.swift in Sources */,
 				C85CFEE91F5E54C6004C1902 /* GenericCollectionViewCell.swift in Sources */,
+				1FEE00DE1F6BBAA200A122C3 /* Reactive+Extension.swift in Sources */,
 				C8825DB11F60DD16000CE44F /* MorePicTableViewCell.swift in Sources */,
 				C89FDE551F5D3CAD00DE4B70 /* BaseViewController.swift in Sources */,
 				C811B4041F5FD30800AB2441 /* NewsViewController.swift in Sources */,
 				C89FDE711F5D448E00DE4B70 /* PageTitleCollectionViewCell.swift in Sources */,
+				1FEE00E41F6BC67E00A122C3 /* BaseNavigationController.swift in Sources */,
 				C8825DAF1F60DD07000CE44F /* SinglePicTableViewCell.swift in Sources */,
 				1FBFF7261F657B8000E51D7E /* ContentViewModel.swift in Sources */,
 				1FBFF72C1F65815300E51D7E /* ContentImgTableViewCell.swift in Sources */,
 				C8DC39DF1F5FF4F5006535E2 /* NewsModel.swift in Sources */,
 				C89FDE6C1F5D446B00DE4B70 /* PageContentView.swift in Sources */,
 				1F623CA91F66A9E3006312F5 /* UIImage+DownLoad.swift in Sources */,
+				1FEE00E01F6BBE9300A122C3 /* ContentTitleView.swift in Sources */,
 				C8DC39D91F5FE5AB006535E2 /* Observable+ObjectMapper.swift in Sources */,
 				C85CFEE81F5E54C6004C1902 /* ConfigurableView.swift in Sources */,
 				1FBFF7281F657C1900E51D7E /* ContentModel.swift in Sources */,
@@ -917,6 +933,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 97A9RUBN84;
 				INFOPLIST_FILE = XW/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yu-fax.NBA";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -933,6 +950,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 97A9RUBN84;
 				INFOPLIST_FILE = XW/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yu-fax.NBA";
 				PRODUCT_NAME = "$(TARGET_NAME)";

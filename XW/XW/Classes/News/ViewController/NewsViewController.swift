@@ -47,15 +47,16 @@ class NewsViewController: BaseViewController {
         
         tableView.rx.modelSelected(NewsModel.self)
             .subscribe(onNext: { [weak self] element in
-                self?.performSegue(withIdentifier: R.segue.newsViewController.singleToContent.identifier, sender: element.url)
+                self?.performSegue(withIdentifier: R.segue.newsViewController.singleToContent.identifier, sender: (element.url, element.title, element.date))
             })
             .addDisposableTo(disposebag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sourceVc = segue.destination as? ContentViewController
-        if let contentVc = sourceVc {
-            contentVc.url = sender as? String
+        if let contentVc = sourceVc, let object = sender as? (url:String, title: String, source: String) {
+            contentVc.url = object.url
+            contentVc.titleAndSource = (object.title, object.source)
         }
     }
     

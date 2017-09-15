@@ -13,6 +13,8 @@ import RxDataSources
 
 class ContentViewController: BaseViewController {
     
+    var titleAndSource: (title: String, source: String)?
+    
     @IBOutlet weak var tableView: UITableView!
     
     var url: String!
@@ -21,6 +23,11 @@ class ContentViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rx.contentOffset.subscribe(onNext: { point in
+         
+        })
+        .addDisposableTo(disposebag)
     }
     
     override func bindToView() {
@@ -45,12 +52,17 @@ class ContentViewController: BaseViewController {
     override func setupUI() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 98
+        
+        let titleView = R.nib.contentTitleView.firstView(owner: nil)
+        titleView?.titleAndSource = titleAndSource
+        view.addSubview(titleView!)
+
+        titleView?.maxHeight.asObservable().subscribe(onNext: {[weak self] height in
+            self?.tableView.contentInset = UIEdgeInsets(top: height, left: 0, bottom: 0, right: 0)
+        })
+        .addDisposableTo(disposebag)
     }
     
     fileprivate lazy var viewModel = ContentViewModel()
-    
-    deinit {
-        print("-----")
-    }
     
 }
