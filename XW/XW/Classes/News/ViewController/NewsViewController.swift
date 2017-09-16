@@ -34,7 +34,7 @@ class NewsViewController: BaseViewController {
     
         datasoure.configureCell = { (_, tableview, indexPath, element) in
             
-            let cell = tableview.dequeueReusableCell(withIdentifier: element.identifier!)
+            let cell = tableview.dequeueReusableCell(withIdentifier: element.identifier)
             if let singleCell = cell as? SinglePicTableViewCell {
                 singleCell.configureCell(datas: element)
                 return singleCell
@@ -47,7 +47,7 @@ class NewsViewController: BaseViewController {
         
         tableView.rx.modelSelected(NewsModel.self)
             .subscribe(onNext: { [weak self] element in
-                self?.performSegue(withIdentifier: R.segue.newsViewController.singleToContent.identifier, sender: (element.url, element.title, element.date))
+                self?.performSegue(withIdentifier: R.segue.newsViewController.singleToContent.identifier, sender: (element.url, element.title, element.author_name + " " + element.date))
             })
             .addDisposableTo(disposebag)
     }
@@ -63,6 +63,7 @@ class NewsViewController: BaseViewController {
     override func setupUI() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 98
+        tableView.tableFooterView = UIView()
     }
     
     fileprivate lazy var viewModel = NewsViewModel()

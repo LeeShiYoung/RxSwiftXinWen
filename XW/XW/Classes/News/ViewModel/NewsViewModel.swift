@@ -42,9 +42,7 @@ fileprivate extension ObservableType where E == [NewsModel] {
                     $0.identifier = MorePicTableViewCell.toString()
                 } else {
                     $0.identifier = SinglePicTableViewCell.toString()
-                }
-                
-                $0.date = $0.date + " " + $0.author_name
+                }                
             }
             return Observable.just([SectionModel(model: "", items: models)])
         }        

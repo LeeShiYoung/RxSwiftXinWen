@@ -74,7 +74,18 @@
                             <constraint firstItem="0k7-36-bTV" firstAttribute="top" secondItem="B2O-Ha-Oo4" secondAttribute="bottom" id="zIe-Ta-k7s"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HND-vl-zJg"/>
+                    <navigationItem key="navigationItem" id="HND-vl-zJg">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="Apd-fo-z7A">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3I5-iY-7gv">
+                                <rect key="frame" x="16" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="UC头条">
+                                    <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="pageContentView" destination="B2O-Ha-Oo4" id="MZ8-bS-PVg"/>
                         <outlet property="pageTitleView" destination="D3Z-he-qzD" id="oGk-Gx-FOm"/>

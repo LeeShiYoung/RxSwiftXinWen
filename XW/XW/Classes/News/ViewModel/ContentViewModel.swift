@@ -18,7 +18,7 @@ struct ContentViewModel {
     var parameter: Variable<String>
     
     var datas: Driver<[SectionModel<String, ContentModel>]>
-    
+        
     init() {
         self.parameter = Variable("")
         
@@ -28,6 +28,8 @@ struct ContentViewModel {
                 .mapContentModels()
                 .asDriver(onErrorJustReturn: [SectionModel(model: "", items: [])])
         }
+        
+        
     }
 }
 

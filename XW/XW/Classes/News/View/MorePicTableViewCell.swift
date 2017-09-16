@@ -27,7 +27,7 @@ class MorePicTableViewCell: GenericTableViewCell, ConfigureCell {
         imagview1.kf.setImage(with: URL(string: datas.thumbnail_pic_s))
         imagview2.kf.setImage(with: URL(string: datas.thumbnail_pic_s02))
         imagview3.kf.setImage(with: URL(string: datas.thumbnail_pic_s03))
-        timelabel.text = datas.date
+        timelabel.text = datas.source
     }
 
 }

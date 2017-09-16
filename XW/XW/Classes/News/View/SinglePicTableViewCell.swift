@@ -21,7 +21,7 @@ class SinglePicTableViewCell: GenericTableViewCell, ConfigureCell {
     func configureCell(datas: NewsModel) {
         
         titlelabel.text = datas.title
-        timelabel.text = datas.date
+        timelabel.text = datas.date + " " + datas.author_name
         imageview.kf.setImage(with: URL(string: datas.thumbnail_pic_s))
         
     }

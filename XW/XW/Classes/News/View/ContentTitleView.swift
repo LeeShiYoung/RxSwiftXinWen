@@ -18,7 +18,6 @@ class ContentTitleView: UIView {
     var titleAndSource: (title: String, source: String)? {
         didSet{
             sourceLabel.text = titleAndSource?.source
-            layoutIfNeeded()
             
             titleLabel.attributedText = titleAndSource?.title.at.attributed {
                 return $0.alignment(.center)
@@ -26,6 +25,8 @@ class ContentTitleView: UIView {
                     .foreground(color: UIColor.colorWithHex("#333333")!)
                     .font(UIFont.boldSystemFont(ofSize: 20))
             }
+            
+            layoutIfNeeded()
         }
     }
     
@@ -37,7 +38,6 @@ class ContentTitleView: UIView {
         super.awakeFromNib()
         
         self.frame.size.width = kScreenW
-        
     }
     
     override func layoutSubviews() {

@@ -10,7 +10,6 @@ import UIKit
 
 extension CGSize {
     public func scaleSize() -> CGSize {
-        print(CGSize(width: kScreenW, height: (height * kScreenW) / width))
         return CGSize(width: kScreenW, height: (height * kScreenW) / width)
     }
 }

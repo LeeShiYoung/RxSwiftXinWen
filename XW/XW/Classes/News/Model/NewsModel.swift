@@ -18,8 +18,8 @@ class NewsModel: Mappable {
     var thumbnail_pic_s03: String = ""
     var author_name: String = ""
     var url: String = ""
-    
-    var identifier: String?
+    var identifier: String = ""
+    var source: String = ""
     
     required init?(map: Map) { }
     
@@ -31,5 +31,6 @@ class NewsModel: Mappable {
         thumbnail_pic_s03 <- map["thumbnail_pic_s03"]
         author_name <- map["author_name"]
         url <- map["url"]
+        source = date + " " + author_name
     }
 }
