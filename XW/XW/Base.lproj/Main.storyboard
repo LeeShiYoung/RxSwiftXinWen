@@ -76,8 +76,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="HND-vl-zJg">
                         <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="Apd-fo-z7A">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3I5-iY-7gv">
-                                <rect key="frame" x="16" y="7" width="46" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3I5-iY-7gv">
+                                <rect key="frame" x="16" y="7" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="UC头条">
                                     <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -113,7 +113,7 @@
                                 <color key="separatorColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SinglePicTableViewCell" rowHeight="98" id="Mly-kD-EFt" customClass="SinglePicTableViewCell" customModule="XW" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SinglePicTableViewCell" rowHeight="98" id="Mly-kD-EFt" customClass="SinglePicTableViewCell" customModule="XW" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mly-kD-EFt" id="s2C-iY-OFo">
@@ -160,7 +160,7 @@
                                             <outlet property="titlelabel" destination="qee-Z5-Ass" id="0PX-uI-udN"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MorePicTableViewCell" rowHeight="189" id="6Iz-Ha-7ns" customClass="MorePicTableViewCell" customModule="XW" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MorePicTableViewCell" rowHeight="189" id="6Iz-Ha-7ns" customClass="MorePicTableViewCell" customModule="XW" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="126" width="375" height="189"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Iz-Ha-7ns" id="Yk1-Rg-OVU">
@@ -365,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kNn-MI-6fW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2399.1999999999998" y="94.581280788177338"/>
+            <point key="canvasLocation" x="2386" y="102"/>
         </scene>
     </scenes>
 </document>

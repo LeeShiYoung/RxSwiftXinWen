@@ -27,9 +27,9 @@ extension AMError: LocalizedError {
 
 public extension Response {
     public func mapResult<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) throws -> [T]{
-        
-        let json = try mapJSON()
-    print(json)
+//
+//        let json = try mapJSON()
+//    print(json)
         let status = try mapObject(Status.self)
 
         guard let result = status.result, let data = Mapper<T>(context: context).mapArray(JSONObject: result.data!), result.stat == "1" else {

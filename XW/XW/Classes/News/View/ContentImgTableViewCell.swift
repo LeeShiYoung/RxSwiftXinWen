@@ -15,6 +15,7 @@ class ContentImgTableViewCell: UITableViewCell, ConfigureCell {
     func configureCell(datas: ContentModel) {
         height.constant = datas.size.height
         imageview.kf.setImage(with: URL(string: datas.img))
+        layoutIfNeeded()
     }
 
 }

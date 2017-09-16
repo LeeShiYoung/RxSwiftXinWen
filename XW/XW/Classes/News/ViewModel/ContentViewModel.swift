@@ -24,12 +24,11 @@ struct ContentViewModel {
         
         self.datas = self.parameter.asDriver().flatMap { parm in
             return API.request(.content(parm))
+                .filterSuccessfulStatusCodes()
                 .mapString()
                 .mapContentModels()
                 .asDriver(onErrorJustReturn: [SectionModel(model: "", items: [])])
         }
-        
-        
     }
 }
 
