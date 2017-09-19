@@ -53,12 +53,19 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
+    /// Nib `AuthorView`.
+    static let authorView = _R.nib._AuthorView()
     /// Nib `ContentTitleView`.
     static let contentTitleView = _R.nib._ContentTitleView()
     /// Nib `PageTitleCollectionViewCell`.
     static let pageTitleCollectionViewCell = _R.nib._PageTitleCollectionViewCell()
+    
+    /// `UINib(name: "AuthorView", in: bundle)`
+    static func authorView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.authorView)
+    }
     
     /// `UINib(name: "ContentTitleView", in: bundle)`
     static func contentTitleView(_: Void = ()) -> UIKit.UINib {
@@ -153,6 +160,17 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
+    struct _AuthorView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AuthorView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _ContentTitleView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "ContentTitleView"

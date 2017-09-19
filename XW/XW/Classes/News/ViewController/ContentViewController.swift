@@ -19,6 +19,8 @@ class ContentViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var authorItem: UIBarButtonItem!
+    
     fileprivate var pointY: CGFloat = 0.0
     
     fileprivate let datasoure = RxTableViewSectionedReloadDataSource<SectionModel<String, ContentModel>>()
@@ -61,13 +63,24 @@ class ContentViewController: BaseViewController {
                 self?.view.addSubview((self?.titleView)!)
                 self?.titleView?.frame.origin.y = 0
             }
-            
-            self?.titleView?.alpha = point.y / -(self?.pointY)!
+            let alpha = point.y / -(self?.pointY)!
+            self?.titleView?.alpha = alpha
+            self?.authorView?.alpha = 1 - alpha
         })
             .addDisposableTo(disposebag)
     }
     
     override func setupUI() {
+
+        let customView = authorItem.customView!
+        if let authorView = authorView {
+            customView.addSubview(authorView)
+            authorView.snp.makeConstraints({ (make) in
+                make.edges.equalTo(customView)
+            })
+            authorView.text = titleAndSource?.source.split(separator: " ").map(String.init).first
+        }
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 98
         
@@ -83,7 +96,12 @@ class ContentViewController: BaseViewController {
     
     fileprivate lazy var titleView = R.nib.contentTitleView.firstView(owner: nil)
     
+    fileprivate lazy var authorView: UILabel? = {
+        let authorView = R.nib.authorView.firstView(owner: nil) as? UILabel
+        authorView?.alpha = 0
+        return authorView
+    }()
+    
     fileprivate lazy var viewModel = ContentViewModel()
-
 }
 

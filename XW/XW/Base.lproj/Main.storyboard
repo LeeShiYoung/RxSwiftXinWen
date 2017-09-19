@@ -328,8 +328,17 @@
                             <constraint firstItem="YZ0-G5-8ex" firstAttribute="top" secondItem="YKJ-h2-uYT" secondAttribute="bottom" id="te7-7N-zmn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Wto-Yp-JGL"/>
+                    <navigationItem key="navigationItem" id="Wto-Yp-JGL">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="0hR-8V-Kpp">
+                            <view key="customView" contentMode="scaleToFill" id="672-c4-K9U">
+                                <rect key="frame" x="24" y="22" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="authorItem" destination="0hR-8V-Kpp" id="49v-pf-k2u"/>
                         <outlet property="tableView" destination="YZ0-G5-8ex" id="Una-PB-tjd"/>
                     </connections>
                 </viewController>
