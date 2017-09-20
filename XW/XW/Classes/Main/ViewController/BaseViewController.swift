@@ -19,15 +19,16 @@ class BaseViewController: UIViewController, ConfigurableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewDidload()
         setupUI()
         bindToView()
     }
-    
-    func viewDidload() { }
     
     func setupUI() { }
     
     func bindToView() { }
 
+}
+
+protocol ViewModelProtocol {
+    var viewModel: Any {set get}
 }

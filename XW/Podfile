@@ -22,6 +22,7 @@ target 'XW' do
     pod 'Kingfisher'
     pod 'Kanna'
     pod 'AttributedLib'
+    pod 'FDFullscreenPopGesture'
 #    pod 'ImageScout'
 #    pod 'SwiftRichString', '~> 0.9.9'
 

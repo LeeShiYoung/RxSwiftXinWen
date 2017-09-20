@@ -65,22 +65,15 @@ class ContentViewController: BaseViewController {
             }
             let alpha = point.y / -(self?.pointY)!
             self?.titleView?.alpha = alpha
-            self?.authorView?.alpha = 1 - alpha
+            self?.authorView.alpha = 1 - alpha
         })
             .addDisposableTo(disposebag)
     }
     
     override func setupUI() {
 
-        let customView = authorItem.customView!
-        if let authorView = authorView {
-            customView.addSubview(authorView)
-            authorView.snp.makeConstraints({ (make) in
-                make.edges.equalTo(customView)
-            })
-            authorView.text = titleAndSource?.source.split(separator: " ").map(String.init).first
-        }
-        
+        authorView.text = titleAndSource?.source.split(separator: " ").map(String.init).first
+
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 98
         
@@ -96,11 +89,21 @@ class ContentViewController: BaseViewController {
     
     fileprivate lazy var titleView = R.nib.contentTitleView.firstView(owner: nil)
     
-    fileprivate lazy var authorView: UILabel? = {
-        let authorView = R.nib.authorView.firstView(owner: nil) as? UILabel
-        authorView?.alpha = 0
-        return authorView
+    fileprivate lazy var authorView: UILabel = {
+        let customView = self.authorItem.customView!
+        if let authorView = R.nib.authorView.firstView(owner: nil) as? UILabel {
+            customView.addSubview(authorView)
+            authorView.snp.makeConstraints({ (make) in
+                make.edges.equalTo(customView)
+            })
+            authorView.alpha = 0
+            return authorView
+        }
+        return UILabel()
     }()
+    deinit {
+        print("-------")
+    }
     
     fileprivate lazy var viewModel = ContentViewModel()
 }

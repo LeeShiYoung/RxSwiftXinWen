@@ -10,7 +10,6 @@ import Foundation
 
 protocol ConfigurableViewController {
     
-    func viewDidload()
     
     func setupUI()
     

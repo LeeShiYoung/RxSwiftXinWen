@@ -241,7 +241,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="Ncv-uB-uQw" id="IhB-uI-hgS"/>
-                        <segue destination="9dT-no-QVu" kind="push" identifier="singleToContent" id="yla-pS-tME"/>
+                        <segue destination="9dT-no-QVu" kind="show" identifier="newsToContent" id="RUp-Eg-2cb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSf-r1-FKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -319,12 +319,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTC-PU-Gnb">
+                                <rect key="frame" x="0.0" y="768" width="375" height="44"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vup-LI-CQD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fSe-Jr-v4x"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="YZ0-G5-8ex" secondAttribute="trailing" id="8F7-tr-0Ed"/>
                             <constraint firstItem="YZ0-G5-8ex" firstAttribute="leading" secondItem="Sts-EY-H1j" secondAttribute="leading" id="Cke-DU-MEd"/>
-                            <constraint firstItem="38a-qh-3tR" firstAttribute="top" secondItem="YZ0-G5-8ex" secondAttribute="bottom" id="kfN-Fc-h0f"/>
+                            <constraint firstItem="38a-qh-3tR" firstAttribute="top" secondItem="YZ0-G5-8ex" secondAttribute="bottom" id="EWL-v1-pzI"/>
+                            <constraint firstAttribute="bottom" secondItem="vTC-PU-Gnb" secondAttribute="bottom" id="IpK-gb-y4T"/>
+                            <constraint firstItem="vTC-PU-Gnb" firstAttribute="leading" secondItem="Sts-EY-H1j" secondAttribute="leading" id="aPM-yr-d0P"/>
+                            <constraint firstAttribute="trailing" secondItem="vTC-PU-Gnb" secondAttribute="trailing" id="f7h-2D-yxw"/>
                             <constraint firstItem="YZ0-G5-8ex" firstAttribute="top" secondItem="YKJ-h2-uYT" secondAttribute="bottom" id="te7-7N-zmn"/>
                         </constraints>
                     </view>
@@ -344,7 +358,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4U-Km-P7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="102.09895052473765"/>
+            <point key="canvasLocation" x="1688.8" y="101.97044334975369"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="b2z-Es-jp2">
