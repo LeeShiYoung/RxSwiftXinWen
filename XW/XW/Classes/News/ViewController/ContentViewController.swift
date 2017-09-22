@@ -80,9 +80,9 @@ class ContentViewController: BaseViewController {
         titleView?.titleAndSource = titleAndSource
         view.addSubview(titleView!)
         
-        titleView?.maxHeight.asObservable().subscribe(onNext: {[weak self] height in
-            self?.tableView.contentInset = UIEdgeInsets(top: height, left: 0, bottom: 0, right: 0)
-            self?.pointY = height
+        titleView?.maxHeight.asObservable().subscribe(onNext: {[unowned self] height in
+            self.tableView.contentInset = UIEdgeInsets(top: height, left: 0, bottom: 0, right: 0)
+            self.pointY = height
         })
             .addDisposableTo(disposebag)
     }
