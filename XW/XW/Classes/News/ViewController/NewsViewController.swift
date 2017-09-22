@@ -23,6 +23,7 @@ class NewsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
     }
     
     override func bindToView() {
@@ -47,8 +48,6 @@ class NewsViewController: BaseViewController {
         
         tableView.rx.modelSelected(NewsModel.self)
             .subscribe(onNext: { [weak self] element in
-                
-                
                 
                 self?.performSegue(withIdentifier: R.segue.newsViewController.newsToContent.identifier, sender: (element.url, element.title, element.author_name + " " + element.date))
             })

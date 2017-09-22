@@ -52,20 +52,20 @@ class ContentViewController: BaseViewController {
     }
     
     func observerOffset() {
-        tableView.rx.contentOffset.subscribe(onNext: { [weak self] point in
-            if point.y > -(self?.pointY)!, self?.titleView?.superview == self?.view {
-                self?.titleView?.removeFromSuperview()
-                self?.tableView.addSubview((self?.titleView)!)
-                self?.titleView?.frame.origin.y = -(self?.pointY)!
+        tableView.rx.contentOffset.subscribe(onNext: { [unowned self] point in
+            if point.y > -self.pointY, self.titleView?.superview == self.view {
+                self.titleView?.removeFromSuperview()
+                self.tableView.addSubview((self.titleView)!)
+                self.titleView?.frame.origin.y = -self.pointY
                 
-            } else if point.y < -(self?.pointY)!, self?.titleView?.superview == self?.tableView {
-                self?.titleView?.removeFromSuperview()
-                self?.view.addSubview((self?.titleView)!)
-                self?.titleView?.frame.origin.y = 0
+            } else if point.y < -self.pointY, self.titleView?.superview == self.tableView {
+                self.titleView?.removeFromSuperview()
+                self.view.addSubview(self.titleView!)
+                self.titleView?.frame.origin.y = 0
             }
-            let alpha = point.y / -(self?.pointY)!
-            self?.titleView?.alpha = alpha
-            self?.authorView.alpha = 1 - alpha
+            let alpha = point.y / -self.pointY
+            self.titleView?.alpha = alpha
+            self.authorView.alpha = 1 - alpha
         })
             .addDisposableTo(disposebag)
     }
