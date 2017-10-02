@@ -35,7 +35,7 @@ class PageTitleView: GenericView {
             .addDisposableTo(disposeBag)
     }
     
-    fileprivate lazy var titleCollectionView: UICollectionView = {[weak self] _ in
+    fileprivate lazy var titleCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 55, height: itemHeight)
         layout.minimumLineSpacing = 0

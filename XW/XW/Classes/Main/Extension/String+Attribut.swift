@@ -13,7 +13,7 @@ extension String {
         
         let paraph = NSMutableParagraphStyle()
         paraph.lineSpacing = space
-        let attributeds = [NSParagraphStyleAttributeName: paraph]
+        let attributeds = [NSAttributedStringKey.paragraphStyle: paraph]
         return NSAttributedString(string: self, attributes: attributeds)
     }
 }

@@ -9,21 +9,34 @@
 import Foundation
 import Moya
 
-let API = RxMoyaProvider<APITool>()
+private func JSONResponseDataFormatter(_ data: Data) -> Data {
+    do {
+        let dataAsJSON = try JSONSerialization.jsonObject(with: data)
+        let prettyData =  try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
+        return prettyData
+    } catch {
+        return data
+    }
+}
+
+let API = RxMoyaProvider<APITool>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)])
 
 enum APITool {
     case toutiao(String, String)
     case content(String)
 }
 extension APITool: TargetType {
+    var headers: [String : String]? {
+        return nil
+    }
+    
     var baseURL: URL{
         switch self {
         case .toutiao(_, _):
-             return URL(string: "http://v.juhe.cn/")!
+            return URL(string: "http://v.juhe.cn/")!
         case .content(_):
             return URL(string: "http://mini.eastday.com/mobile/")!
         }
-       
     }
     
     var path: String {
@@ -44,23 +57,16 @@ extension APITool: TargetType {
         }
     }
     
-    var parameters: [String : Any]? {
+    var task: Task{
+        
         switch self {
-        case .toutiao(let type, let key):
-            return ["type": type, "key": key]
-        case .content(_):
-            return nil
+        case .toutiao(let parm, let key):
+            return .requestParameters(parameters: ["type": parm, "key": key], encoding: URLEncoding.default)
+        default:
+            return .requestPlain
         }
     }
-    
-    var task: Task{
-        return .request
-    }
-    
-    var parameterEncoding: ParameterEncoding{
-        return URLEncoding.default
-    }
-    
+
     var sampleData: Data {
         return "Sample data".data(using: String.Encoding.utf8)!
     }

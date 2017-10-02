@@ -17,5 +17,4 @@ class ContentImgTableViewCell: UITableViewCell, ConfigureCell {
         imageview.kf.setImage(with: URL(string: datas.img))
         layoutIfNeeded()
     }
-
 }

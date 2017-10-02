@@ -32,9 +32,9 @@ struct ContentViewModel {
     }
 }
 
-fileprivate extension ObservableType where E == String {
-    fileprivate func mapContentModels() -> Observable<[SectionModel<String, ContentModel>]> {
-        return flatMap { html -> Observable<[SectionModel<String, ContentModel>]> in
+fileprivate extension PrimitiveSequence where TraitType == SingleTrait, ElementType == String {
+    fileprivate func mapContentModels() -> Single<[SectionModel<String, ContentModel>]> {
+        return flatMap { html -> Single<[SectionModel<String, ContentModel>]> in
             var datas = [ContentModel]()
             
             if let doc = HTML(html: html, encoding: .utf8) {
@@ -55,7 +55,7 @@ fileprivate extension ObservableType where E == String {
                     }
                 }
             }
-            return Observable.just([SectionModel(model: "", items: datas)])
+            return Single.just([SectionModel(model: "", items: datas)])
         }
     }
 }

@@ -12,17 +12,18 @@ import Moya
 import ObjectMapper
 import SVProgressHUD
 
-public extension ObservableType where E == Response {
-    public func mapResult<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) -> Observable<[T]> {
-        
-        return flatMap { response -> Observable<[T]> in
-            return Observable.just(try response.mapResult(T.self, context: context))
+public extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
+    public func mapResult<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) -> Single<[T]> {
+
+        return flatMap { response -> Single<[T]> in
+            return Single.just(try response.mapResult(T.self, context: context))
         }
     }
 }     
 
-public extension Observable {
-    public func showErrorToast() -> Observable {
+public extension PrimitiveSequence {
+    public func showErrorToast() -> PrimitiveSequence {
+    
         return self.do(onNext: { objc in
         
         }, onError: { error in
@@ -31,8 +32,7 @@ public extension Observable {
                 message = msg
             }
             SVProgressHUD.showError(withStatus: message)
-            
-            print(error)
         })
     }
 }
+

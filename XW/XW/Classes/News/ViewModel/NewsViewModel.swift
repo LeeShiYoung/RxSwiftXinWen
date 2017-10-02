@@ -34,9 +34,9 @@ struct NewsViewModel {
 
 
 // MARK: - 将网络请求下来的数据进一步包装 （判断有几张照片，identifier赋值）
-fileprivate extension ObservableType where E == [NewsModel] {
-    func mapModels() -> Observable<[SectionModel<String, NewsModel>]> {
-        return flatMap { models -> Observable<[SectionModel<String, NewsModel>]> in
+fileprivate extension PrimitiveSequence where TraitType == SingleTrait, ElementType == [NewsModel] {
+    func mapModels() -> Single<[SectionModel<String, NewsModel>]> {
+        return flatMap { models -> Single<[SectionModel<String, NewsModel>]> in
             models.forEach {
                 if !$0.thumbnail_pic_s03.isEmpty {
                     $0.identifier = MorePicTableViewCell.toString()
@@ -44,7 +44,7 @@ fileprivate extension ObservableType where E == [NewsModel] {
                     $0.identifier = SinglePicTableViewCell.toString()
                 }                
             }
-            return Observable.just([SectionModel(model: "", items: models)])
+            return Single.just([SectionModel(model: "", items: models)])
         }        
     }
 }
