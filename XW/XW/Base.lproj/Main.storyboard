@@ -320,7 +320,7 @@
                                 </prototypes>
                             </tableView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTC-PU-Gnb">
-                                <rect key="frame" x="0.0" y="768" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="734" width="375" height="44"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vup-LI-CQD">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +336,7 @@
                             <constraint firstAttribute="trailing" secondItem="YZ0-G5-8ex" secondAttribute="trailing" id="8F7-tr-0Ed"/>
                             <constraint firstItem="YZ0-G5-8ex" firstAttribute="leading" secondItem="Sts-EY-H1j" secondAttribute="leading" id="Cke-DU-MEd"/>
                             <constraint firstItem="38a-qh-3tR" firstAttribute="top" secondItem="YZ0-G5-8ex" secondAttribute="bottom" id="EWL-v1-pzI"/>
-                            <constraint firstAttribute="bottom" secondItem="vTC-PU-Gnb" secondAttribute="bottom" id="IpK-gb-y4T"/>
+                            <constraint firstItem="38a-qh-3tR" firstAttribute="top" secondItem="vTC-PU-Gnb" secondAttribute="bottom" id="IpK-gb-y4T"/>
                             <constraint firstItem="vTC-PU-Gnb" firstAttribute="leading" secondItem="Sts-EY-H1j" secondAttribute="leading" id="aPM-yr-d0P"/>
                             <constraint firstAttribute="trailing" secondItem="vTC-PU-Gnb" secondAttribute="trailing" id="f7h-2D-yxw"/>
                             <constraint firstItem="YZ0-G5-8ex" firstAttribute="top" secondItem="YKJ-h2-uYT" secondAttribute="bottom" id="te7-7N-zmn"/>
