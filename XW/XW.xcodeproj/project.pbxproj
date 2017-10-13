@@ -734,7 +734,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT/XW\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/XW\"";
 		};
 		D7BEE102E7B6137F73E3DF5D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

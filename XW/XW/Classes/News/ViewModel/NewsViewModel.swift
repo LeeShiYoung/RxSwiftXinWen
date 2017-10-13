@@ -25,7 +25,6 @@ struct NewsViewModel {
             return API.request(.toutiao(parm, APPKey))
                 .filterSuccessfulStatusCodes()
                 .mapResult(NewsModel.self)
-                .showErrorToast()
                 .mapModels()
                 .asDriver(onErrorJustReturn: [SectionModel(model: "", items: [])])
         }
@@ -48,3 +47,8 @@ fileprivate extension PrimitiveSequence where TraitType == SingleTrait, ElementT
         }        
     }
 }
+
+fileprivate extension Single {
+    
+}
+

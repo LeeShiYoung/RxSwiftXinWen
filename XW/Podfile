@@ -1,12 +1,13 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '9.0'
 
 target 'XW' do
     # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
     use_frameworks!
     
-    pod 'RxSwift',    '~> 3.0'
-    pod 'RxCocoa',    '~> 3.0'
+    pod 'RxSwift', '~> 3.0'
+#    pod 'RxSwift', '~> 3.0', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch => 'rxswift4.0-swift4.0'
+#    pod 'RxCocoa',    '~> 3.0'
     pod 'RxDataSources'
     pod 'Moya'
     pod 'Moya-ObjectMapper/RxSwift'
@@ -16,9 +17,9 @@ target 'XW' do
     pod 'BCColor'
     pod 'R.swift'
     pod 'ObjectMapper'
+#    pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :branch => 'swift-4'
     pod 'SVProgressHUD'
     pod 'Moya'
-    pod 'Moya-ObjectMapper/RxSwift'
     pod 'Kingfisher'
     pod 'Kanna'
     pod 'AttributedLib'

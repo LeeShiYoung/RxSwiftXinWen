@@ -14,25 +14,16 @@ import SVProgressHUD
 
 public extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
     public func mapResult<T: BaseMappable>(_ type: T.Type, context: MapContext? = nil) -> Single<[T]> {
-
+        
         return flatMap { response -> Single<[T]> in
             return Single.just(try response.mapResult(T.self, context: context))
-        }
-    }
-}     
-
-public extension PrimitiveSequence {
-    public func showErrorToast() -> PrimitiveSequence {
-    
-        return self.do(onNext: { objc in
-        
-        }, onError: { error in
-            var message = "出错了!"
-            if let amerror = error as? AMError, let msg = amerror.message{
-                message = msg
             }
-            SVProgressHUD.showError(withStatus: message)
-        })
+            .do(onNext: { _ in }, onError: { error in
+                var message = "出错了!"
+                if let amerror = error as? AMError, let msg = amerror.message{
+                    message = msg
+                }
+                SVProgressHUD.showError(withStatus: message)
+            })
     }
 }
-
