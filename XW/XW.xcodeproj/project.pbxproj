@@ -22,6 +22,7 @@
 		1FEE00E01F6BBE9300A122C3 /* ContentTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE00DF1F6BBE9300A122C3 /* ContentTitleView.swift */; };
 		1FEE00E21F6BBE9E00A122C3 /* ContentTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FEE00E11F6BBE9E00A122C3 /* ContentTitleView.xib */; };
 		1FEE00E41F6BC67E00A122C3 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE00E31F6BC67E00A122C3 /* BaseNavigationController.swift */; };
+		1FF46EE21F908F55003C38BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF46EE11F908F55003C38BF /* HomeViewController.swift */; };
 		40A15E91DD1309F194A2318B /* Pods_XWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4C02AD8C7C0C72302B5473 /* Pods_XWUITests.framework */; };
 		439F866A0437C62BD69EE8E9 /* Pods_XW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E104DFC420EFD1E5837E7D68 /* Pods_XW.framework */; };
 		C811B4041F5FD30800AB2441 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C811B4031F5FD30800AB2441 /* NewsViewController.swift */; };
@@ -55,7 +56,6 @@
 		C89FDE771F5D4A2A00DE4B70 /* UIViewController+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FDE761F5D4A2A00DE4B70 /* UIViewController+String.swift */; };
 		C89FDE791F5D4AA600DE4B70 /* UIView+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FDE781F5D4AA600DE4B70 /* UIView+String.swift */; };
 		C89FDE7B1F5D5A4600DE4B70 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FDE7A1F5D5A4600DE4B70 /* Common.swift */; };
-		C89FDE821F5D5FF500DE4B70 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FDE811F5D5FF500DE4B70 /* PageViewController.swift */; };
 		C8DC39D91F5FE5AB006535E2 /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC39D61F5FE5AB006535E2 /* Observable+ObjectMapper.swift */; };
 		C8DC39DA1F5FE5AB006535E2 /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC39D71F5FE5AB006535E2 /* Response+ObjectMapper.swift */; };
 		C8DC39DB1F5FE5AB006535E2 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC39D81F5FE5AB006535E2 /* Status.swift */; };
@@ -98,6 +98,7 @@
 		1FEE00DF1F6BBE9300A122C3 /* ContentTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTitleView.swift; sourceTree = "<group>"; };
 		1FEE00E11F6BBE9E00A122C3 /* ContentTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTitleView.xib; sourceTree = "<group>"; };
 		1FEE00E31F6BC67E00A122C3 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		1FF46EE11F908F55003C38BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		34D22659AF330A89CCC89368 /* Pods_XWTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1C9A21D6683179350833DD /* Pods-XW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XW.release.xcconfig"; path = "Pods/Target Support Files/Pods-XW/Pods-XW.release.xcconfig"; sourceTree = "<group>"; };
 		9F4C02AD8C7C0C72302B5473 /* Pods_XWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +141,6 @@
 		C89FDE761F5D4A2A00DE4B70 /* UIViewController+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+String.swift"; sourceTree = "<group>"; };
 		C89FDE781F5D4AA600DE4B70 /* UIView+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+String.swift"; sourceTree = "<group>"; };
 		C89FDE7A1F5D5A4600DE4B70 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		C89FDE811F5D5FF500DE4B70 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		C8DC39D61F5FE5AB006535E2 /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
 		C8DC39D71F5FE5AB006535E2 /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
 		C8DC39D81F5FE5AB006535E2 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
@@ -414,7 +414,7 @@
 		C89FDE7F1F5D5FD000DE4B70 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C89FDE811F5D5FF500DE4B70 /* PageViewController.swift */,
+				1FF46EE11F908F55003C38BF /* HomeViewController.swift */,
 				C811B4031F5FD30800AB2441 /* NewsViewController.swift */,
 				1FBFF7211F65255700E51D7E /* ContentViewController.swift */,
 			);
@@ -796,7 +796,6 @@
 				C89FDE561F5D3CAD00DE4B70 /* BaseViewModel.swift in Sources */,
 				C85CFEF11F5E6F9D004C1902 /* ConfigurableViewController.swift in Sources */,
 				C89FDE751F5D4A0400DE4B70 /* String+Extension.swift in Sources */,
-				C89FDE821F5D5FF500DE4B70 /* PageViewController.swift in Sources */,
 				C8DC39DD1F5FE9CC006535E2 /* API.swift in Sources */,
 				1FC799F31F66CDBE00C6A72C /* CGFloat+Scale.swift in Sources */,
 				C89FDE791F5D4AA600DE4B70 /* UIView+String.swift in Sources */,
@@ -828,6 +827,7 @@
 				1FEE00E01F6BBE9300A122C3 /* ContentTitleView.swift in Sources */,
 				C8DC39D91F5FE5AB006535E2 /* Observable+ObjectMapper.swift in Sources */,
 				C85CFEE81F5E54C6004C1902 /* ConfigurableView.swift in Sources */,
+				1FF46EE21F908F55003C38BF /* HomeViewController.swift in Sources */,
 				1FBFF7281F657C1900E51D7E /* ContentModel.swift in Sources */,
 				C85CFEEA1F5E54C6004C1902 /* GenericReusableView.swift in Sources */,
 				C89FDE7B1F5D5A4600DE4B70 /* Common.swift in Sources */,

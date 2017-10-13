@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import BCColor
 
-let APPKey = "c470dae6931d85934a3ee3ec566485ef1"
+let APPKey = "c470dae6931d85934a3ee3ec566485ef"
 
 let kScreenW = UIScreen.main.bounds.width
 let kScreenH = UIScreen.main.bounds.height

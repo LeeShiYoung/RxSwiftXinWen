@@ -19,7 +19,7 @@ struct NewsViewModel {
     
     init() {
         self.parameter = Variable("")
-        
+       
         self.datas = parameter.asDriver().flatMapLatest{ parm in
             
             return API.request(.toutiao(parm, APPKey))

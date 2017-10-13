@@ -35,7 +35,7 @@ class ContentViewController: BaseViewController {
     override func bindToView() {
         
         viewModel.datas.asObservable().bind(to: tableView.rx.items(dataSource: datasoure))
-            .addDisposableTo(disposebag)
+            .disposed(by: disposebag)
         
         datasoure.configureCell = { (_, tableview, indexPath, element) in
             let cell = tableview.dequeueReusableCell(withIdentifier: element.identifier)
@@ -67,7 +67,7 @@ class ContentViewController: BaseViewController {
             self.titleView?.alpha = alpha
             self.authorView.alpha = 1 - alpha
         })
-            .addDisposableTo(disposebag)
+            .disposed(by: disposebag)
     }
     
     override func setupUI() {
@@ -84,7 +84,7 @@ class ContentViewController: BaseViewController {
             self.tableView.contentInset = UIEdgeInsets(top: height, left: 0, bottom: 0, right: 0)
             self.pointY = height
         })
-            .addDisposableTo(disposebag)
+            .disposed(by: disposebag)
     }
     
     fileprivate lazy var titleView = R.nib.contentTitleView.firstView(owner: nil)

@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-330" y="106"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="N6w-FX-uaa">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="5ze-yY-JRQ" customClass="PageViewController" customModule="XW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="5ze-yY-JRQ" customClass="HomeViewController" customModule="XW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Taq-xX-ceR"/>
                         <viewControllerLayoutGuide type="bottom" id="0k7-36-bTV"/>
@@ -39,10 +39,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B2O-Ha-Oo4" customClass="PageContentView" customModule="XW" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="36.666666666666686" width="375" height="653.33333333333326"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-he-qzD" customClass="PageTitleView" customModule="XW" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="36.666666666666671"/>
                                 <subviews>
@@ -62,16 +58,22 @@
                                     <constraint firstAttribute="trailing" secondItem="XDg-HM-e0V" secondAttribute="trailing" id="wde-FL-F1c"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0p-Zv-Ttl">
+                                <rect key="frame" x="0.0" y="37" width="375" height="653"/>
+                                <connections>
+                                    <segue destination="q9s-9f-hdy" kind="embed" id="mML-Ea-Jkh"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="D3Z-he-qzD" secondAttribute="trailing" id="2zh-LC-d7z"/>
+                            <constraint firstAttribute="trailing" secondItem="w0p-Zv-Ttl" secondAttribute="trailing" id="AUr-93-0mB"/>
                             <constraint firstItem="D3Z-he-qzD" firstAttribute="leading" secondItem="fQo-ma-kKP" secondAttribute="leading" id="EP7-9G-O9g"/>
-                            <constraint firstItem="B2O-Ha-Oo4" firstAttribute="top" secondItem="D3Z-he-qzD" secondAttribute="bottom" id="cHe-23-wFr"/>
-                            <constraint firstItem="B2O-Ha-Oo4" firstAttribute="leading" secondItem="fQo-ma-kKP" secondAttribute="leading" id="dhe-8j-GRY"/>
+                            <constraint firstItem="w0p-Zv-Ttl" firstAttribute="top" secondItem="D3Z-he-qzD" secondAttribute="bottom" id="GVQ-o8-Nhx"/>
+                            <constraint firstItem="w0p-Zv-Ttl" firstAttribute="leading" secondItem="fQo-ma-kKP" secondAttribute="leading" id="PmT-iH-Vde"/>
+                            <constraint firstItem="0k7-36-bTV" firstAttribute="top" secondItem="w0p-Zv-Ttl" secondAttribute="bottom" id="e1e-yw-6hb"/>
                             <constraint firstItem="D3Z-he-qzD" firstAttribute="top" secondItem="Taq-xX-ceR" secondAttribute="bottom" id="oKU-Lk-U4r"/>
-                            <constraint firstAttribute="trailing" secondItem="B2O-Ha-Oo4" secondAttribute="trailing" id="sQx-qT-y9A"/>
-                            <constraint firstItem="0k7-36-bTV" firstAttribute="top" secondItem="B2O-Ha-Oo4" secondAttribute="bottom" id="zIe-Ta-k7s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HND-vl-zJg">
@@ -87,13 +89,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="pageContentView" destination="B2O-Ha-Oo4" id="MZ8-bS-PVg"/>
-                        <outlet property="pageTitleView" destination="D3Z-he-qzD" id="oGk-Gx-FOm"/>
+                        <outlet property="titleView" destination="D3Z-he-qzD" id="CPg-Bq-aXc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Qq-qE-YTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="373.60000000000002" y="102.99850074962519"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="fy7-bp-Lri">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="q9s-9f-hdy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBI-gL-A3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1095" y="136"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="5R2-GF-kOc">
@@ -246,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSf-r1-FKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1025" y="103"/>
+            <point key="canvasLocation" x="1812" y="106"/>
         </scene>
         <!--Content View Controller-->
         <scene sceneID="x8D-Fe-fom">
@@ -358,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4U-Km-P7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="101.97044334975369"/>
+            <point key="canvasLocation" x="2518" y="106"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="b2z-Es-jp2">
@@ -388,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kNn-MI-6fW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2386" y="102"/>
+            <point key="canvasLocation" x="2518" y="808"/>
         </scene>
     </scenes>
 </document>

@@ -31,7 +31,7 @@ class NewsViewController: BaseViewController {
         viewModel.parameter.value = newsTtile ?? ""
 
         viewModel.datas.asObservable().bind(to: tableView.rx.items(dataSource: datasoure))
-        .addDisposableTo(disposebag)
+            .disposed(by: disposebag)
     
         datasoure.configureCell = { (_, tableview, indexPath, element) in
             
@@ -52,7 +52,7 @@ class NewsViewController: BaseViewController {
                 self.performSegue(withIdentifier: R.segue.newsViewController.newsToContent.identifier, sender: (element.url, element.title, element.author_name + " " + element.date))
             })
             
-            .addDisposableTo(disposebag)
+            .disposed(by: disposebag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
