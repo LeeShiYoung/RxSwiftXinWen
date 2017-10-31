@@ -17,3 +17,12 @@ extension Reactive where Base: UITableView {
         })
     }
 }
+
+//extension Reactive where Base: UIScrollView {
+//    var soffset: UIBindingObserver<Base, CGPoint> {
+//        return UIBindingObserver(UIElement: base, binding: { scroview, offset in
+//            scroview.contentOffset = offset
+//        })
+//    }
+//}
+

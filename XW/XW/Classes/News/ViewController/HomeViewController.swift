@@ -20,9 +20,17 @@ class HomeViewController: UIViewController {
         let pageVC = segue.destination
       
         if pageVC is UIPageViewController {
+            let page = pageVC as! UIPageViewController
+            page.dataSource = self
+            page.setViewControllers([viewControllers.first!], direction: .forward, animated: true, completion: nil)
             
-            (pageVC as! UIPageViewController).dataSource = self
-            (pageVC as! UIPageViewController).setViewControllers([viewControllers.first!], direction: .forward, animated: true, completion: nil)
+            for subview in page.view.subviews {
+                if subview is UIScrollView {
+                    (subview as! UIScrollView).rx.contentOffset.subscribe(onNext: { point in
+                        
+                    })
+                }
+            }
         }
     }
     
@@ -49,7 +57,7 @@ extension HomeViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let index = viewControllers.index(of: viewController)
-        guard var idx = index, idx <= viewControllers.count - 1  else { return nil }
+        guard var idx = index, idx < viewControllers.count - 1  else { return nil }
         idx+=1
         return viewControllers[idx]
     }
