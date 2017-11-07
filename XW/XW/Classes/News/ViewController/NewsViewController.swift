@@ -51,7 +51,6 @@ class NewsViewController: BaseViewController {
                 
                 self.performSegue(withIdentifier: R.segue.newsViewController.newsToContent.identifier, sender: (element.url, element.title, element.author_name + " " + element.date))
             })
-            
             .disposed(by: disposebag)
     }
     
