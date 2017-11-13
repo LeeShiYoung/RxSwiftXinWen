@@ -71,7 +71,7 @@ class ContentViewController: BaseViewController {
     }
     
     override func setupUI() {
-
+        
         authorView.text = titleAndSource?.source.split(separator: " ").map(String.init).first
 
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -81,7 +81,7 @@ class ContentViewController: BaseViewController {
         view.addSubview(titleView!)
         
         titleView?.maxHeight.asObservable().subscribe(onNext: {[unowned self] height in
-            self.tableView.contentInset = UIEdgeInsets(top: height, left: 0, bottom: 0, right: 0)
+            self.tableView.contentInset = UIEdgeInsets(top: height, left: 0, bottom: 40, right: 0)
             self.pointY = height
         })
             .disposed(by: disposebag)
