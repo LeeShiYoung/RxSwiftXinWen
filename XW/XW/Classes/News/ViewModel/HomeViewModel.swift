@@ -10,9 +10,23 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeViewModel: NSObject {
+class HomeViewModel {
+    
+    fileprivate let disposebag = DisposeBag()
+    
+    let offsetObservable = Variable(CGPoint.zero)
+    
+    init() {
+        bindPoint()
+    }
+}
 
-    init(offsetObserable: Observable<CGPoint>) {
-        
+extension HomeViewModel {
+    fileprivate func bindPoint() {
+        offsetObservable.asObservable().subscribe(onNext: { point in
+            print(point)
+            
+        })
+            .disposed(by: disposebag)
     }
 }

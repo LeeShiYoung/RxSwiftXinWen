@@ -8,8 +8,10 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     @IBOutlet weak var titleView: PageTitleView!
+    
+    lazy var viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +28,10 @@ class HomeViewController: UIViewController {
             
             for subview in page.view.subviews {
                 if subview is UIScrollView {
-                    (subview as! UIScrollView).rx.contentOffset.subscribe(onNext: { point in
-                        
+                    (subview as! UIScrollView).rx.contentOffset.subscribe(onNext: {[weak self] point in
+                        self?.viewModel.offsetObservable.value = point
                     })
+                    .disposed(by: disposebag)
                 }
             }
         }

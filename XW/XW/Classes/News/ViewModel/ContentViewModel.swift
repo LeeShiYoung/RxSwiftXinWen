@@ -15,12 +15,10 @@ import RxDataSources
 
 struct ContentViewModel {
     
-    var parameter: Variable<String>
-    
+    let parameter = Variable("")
     var datas: Driver<[SectionModel<String, ContentModel>]>
         
     init() {
-        self.parameter = Variable("")
         
         self.datas = self.parameter.asDriver().flatMap { parm in
             return API.request(.content(parm))
@@ -28,7 +26,7 @@ struct ContentViewModel {
                 .mapString()
                 .mapContentModels()
                 .asDriver(onErrorJustReturn: [SectionModel(model: "", items: [])])
-        }
+        } 
     }
 }
 

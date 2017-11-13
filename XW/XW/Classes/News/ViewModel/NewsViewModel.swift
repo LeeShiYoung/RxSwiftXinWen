@@ -13,13 +13,11 @@ import RxDataSources
 
 struct NewsViewModel {
     
-    var parameter: Variable<String>
+    let parameter = Variable("")
     
     var datas: Driver<[SectionModel<String, NewsModel>]>
     
-    init() {
-        self.parameter = Variable("")
-       
+    init() {       
         self.datas = parameter.asDriver().flatMapLatest{ parm in
             
             return API.request(.toutiao(parm, APPKey))
