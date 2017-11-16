@@ -11,26 +11,44 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
+enum LoadingType {
+    case empty, waiting, loading(String)
+}
 struct NewsViewModel {
     
-    let parameter = Variable("")
+    let parameter = Variable(LoadingType.empty)
     
     var datas: Driver<[SectionModel<String, NewsModel>]>
-    
-    init() {       
+
+    init() {
+        
         self.datas = parameter.asDriver().flatMapLatest{ parm in
             
-            return API.request(.toutiao(parm, APPKey))
-                .filterSuccessfulStatusCodes()
-                .mapResult(NewsModel.self)
-                .mapModels()
-                .asDriver(onErrorJustReturn: [SectionModel(model: "", items: [])])
+            switch parm {
+            case .waiting:
+                let waitingModels = Array<NewsModel>.mapPlist(path: R.file.newsWaitingDatasPlist.path())
+                let idDatas = [MorePicTableViewCell.toString(), SinglePicTableViewCell.toString()]
+                waitingModels.forEach {
+                    $0.identifier = idDatas[random(in: Range<Int>(0...1))]
+                }
+              
+                return Observable.just([SectionModel(model: "", items: waitingModels)]).asDriver(onErrorJustReturn: [])
+                
+            case .loading(let p):
+                return API.request(.toutiao(p, APPKey))
+                    .filterSuccessfulStatusCodes()
+                    .mapResult(NewsModel.self)
+                    .mapModels()
+                    .asDriver(onErrorJustReturn: [SectionModel(model: "", items: [])])
+                
+            case .empty:
+                return Observable.empty()
+                    .asDriver(onErrorJustReturn: [SectionModel(model: "", items: [])])
+            }
         }
     }
 }
 
-
-// MARK: - 将网络请求下来的数据进一步包装 （判断有几张照片，identifier赋值）
 fileprivate extension PrimitiveSequence where TraitType == SingleTrait, ElementType == [NewsModel] {
     func mapModels() -> Single<[SectionModel<String, NewsModel>]> {
         return flatMap { models -> Single<[SectionModel<String, NewsModel>]> in
@@ -44,9 +62,5 @@ fileprivate extension PrimitiveSequence where TraitType == SingleTrait, ElementT
             return Single.just([SectionModel(model: "", items: models)])
         }        
     }
-}
-
-fileprivate extension Single {
-    
 }
 

@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Windless
 
 class NewsViewController: BaseViewController {
     
@@ -27,14 +28,25 @@ class NewsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.parameter.value = newsTtile ?? ""
-        
+                
+        viewModel.parameter.value = .waiting
+        after(time: 0.5) {
+           self.viewModel.parameter.value = .loading(self.newsTtile ?? "")
+        }
+
+        tableView.windless
+            .apply {
+                $0.beginTime = 2
+                $0.duration = 4
+                $0.animationLayerOpacity = 0.5
+            }
+            .start()
     }
     
     override func bindToView() {
         
         refreshControl.rx.controlEvent(.valueChanged).subscribe(onNext: {[unowned self] _ in
-            self.viewModel.parameter.value = self.newsTtile ?? ""
+            self.viewModel.parameter.value = .loading(self.newsTtile ?? "")
         })
             .disposed(by: disposebag)
         viewModel.datas.asObservable().subscribe(onNext: { [unowned self] _ in
@@ -59,6 +71,13 @@ class NewsViewController: BaseViewController {
             .subscribe(onNext: { [unowned self] element in
                 self.performSegue(withIdentifier: R.segue.newsViewController.newsToContent.identifier, sender: (element.url, element.title, element.author_name + " " + element.date))
             })
+            .disposed(by: disposebag)
+        
+        viewModel.datas.asObservable().subscribe(onNext: {[unowned self] tempDatas in
+            if tempDatas.count != 10 {
+                self.tableView.windless.end()
+            }
+        })
             .disposed(by: disposebag)
     }
     

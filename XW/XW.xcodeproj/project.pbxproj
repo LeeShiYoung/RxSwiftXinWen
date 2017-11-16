@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0F111B1FBC208100BBD4F6 /* NewsWaitingDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F0F111A1FBC208100BBD4F6 /* NewsWaitingDatas.plist */; };
 		1F623CA91F66A9E3006312F5 /* UIImage+DownLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F623CA81F66A9E3006312F5 /* UIImage+DownLoad.swift */; };
 		1F8D994D1FA718310009678A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8D994C1FA718310009678A /* HomeViewModel.swift */; };
 		1FBE52F51F711D58002F5CE1 /* AuthorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBE52F41F711D58002F5CE1 /* AuthorView.xib */; };
@@ -85,6 +86,7 @@
 		041D356E5565F3D72232325A /* Pods-XWTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWTests/Pods-XWTests.release.xcconfig"; sourceTree = "<group>"; };
 		04D3E7167EEA7B39D048489C /* Pods-XWUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWUITests/Pods-XWUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1A31BE73EEFAF70DECEC19CC /* Pods-XW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XW/Pods-XW.debug.xcconfig"; sourceTree = "<group>"; };
+		1F0F111A1FBC208100BBD4F6 /* NewsWaitingDatas.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NewsWaitingDatas.plist; sourceTree = "<group>"; };
 		1F623CA81F66A9E3006312F5 /* UIImage+DownLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+DownLoad.swift"; sourceTree = "<group>"; };
 		1F8D994C1FA718310009678A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1FBE52F41F711D58002F5CE1 /* AuthorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorView.xib; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				C85CFEF71F5E9BB3004C1902 /* Titles.plist */,
+				1F0F111A1FBC208100BBD4F6 /* NewsWaitingDatas.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				1FBE52F51F711D58002F5CE1 /* AuthorView.xib in Resources */,
 				1FCCA0021F88D8AA003B4F46 /* Guide.storyboard in Resources */,
 				C89FDE251F5D3C6E00DE4B70 /* Main.storyboard in Resources */,
+				1F0F111B1FBC208100BBD4F6 /* NewsWaitingDatas.plist in Resources */,
 				C89FDE721F5D448E00DE4B70 /* PageTitleCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,6 +673,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Windless/Windless.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -690,6 +695,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Windless.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

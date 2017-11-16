@@ -9,6 +9,7 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
+    
     @IBOutlet weak var titleView: PageTitleView!
     
     lazy var viewModel = HomeViewModel()
@@ -16,8 +17,6 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleView.titles.value = titles
-        
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

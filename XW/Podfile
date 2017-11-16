@@ -24,6 +24,7 @@ target 'XW' do
     pod 'Kanna'
     pod 'AttributedLib'
     pod 'FDFullscreenPopGesture'
+    pod 'Windless', '~> 0.1.4'
     #    pod 'ImageScout'
     #    pod 'SwiftRichString', '~> 0.9.9'
     
